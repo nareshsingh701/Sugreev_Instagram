@@ -1,8 +1,9 @@
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native'
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image,ScrollView } from 'react-native'
 import React,{useState} from 'react'
 
 const LoginHelp = (props) => {
     const [name,setName]=useState('');
+    let isButton=name.length<= 5;
 
     const user=()=>{
         navigation.navigate("accessYourAccount",{
@@ -12,6 +13,7 @@ const LoginHelp = (props) => {
     }
 
     return (
+        <ScrollView>
         <View style={styles.container}>
             <View style={styles.view}>
                 <Text style={styles.text}>Login help</Text>
@@ -62,6 +64,7 @@ const LoginHelp = (props) => {
             </View>
 
         </View>
+        </ScrollView>
     )
 }
 
@@ -76,7 +79,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 30,
-        fontWeight: 'bold',
+        fontWeight: '600',
         color: '#000'
     },
     viewOne: {
@@ -85,7 +88,7 @@ const styles = StyleSheet.create({
     },
     textTwo: {
         fontSize: 25,
-        fontWeight: 'bold',
+        fontWeight: '600',
         color: '#000'
     },
     viewTwo: {
@@ -94,71 +97,75 @@ const styles = StyleSheet.create({
     },
     textThree: {
         marginHorizontal: 70,
-        fontSize: 18,
-
+        fontSize: 16,
+lineHeight:27
     },
     viewThree: {
         height: 50,
-        width: 350,
-        borderWidth: 1,
+        width: 300,
+        borderWidth: 0.4,
         alignSelf: 'center',
-        marginTop: 30,
-        borderRadius: 8,
+        marginTop: 50,
+        borderRadius: 5,
         borderColor: 'gray'
     },
     textInput: {
-        fontSize: 20,
+        fontSize: 16,
         padding: 10
     },
     viewFour: {
         height: 50,
-        width: 350,
+        width: 300,
         alignSelf: 'center',
         marginTop: 15,
-        borderRadius: 8,
-        backgroundColor: 'blue'
+        borderRadius: 5,
+        backgroundColor: '#1e88e5'
     },
     textFour: {
-        fontSize: 20,
+        fontSize: 18,
         color: '#fff',
-        fontWeight: 'bold',
+        fontWeight: '600',
         alignSelf: 'center',
         marginTop: 10
     },
     viewFive: {
         flexDirection: 'row',
-        marginTop: 30,
+        marginTop: 15,
         alignSelf: 'center'
     },
     viewSix: {
-        width: 140,
-        borderTopWidth: 1,
-        marginTop: 12
+        width: 127,
+        borderTopWidth: 0.4,
+        marginTop: 12,
+      
     },
     viewSeven: {
-        marginHorizontal: 20,
+        marginHorizontal: 10,
 
     },
     textFive: {
-        fontSize: 20,
-        fontWeight: 'bold'
+        fontSize: 18,
+        fontWeight: '600'
     },
     viewEight: {
         height: 50,
-        width: 350,
-        borderWidth: 1,
+        width: 300,
+        borderWidth: 0.8,
         borderColor: 'gray',
         flexDirection: 'row',
         alignSelf: 'center',
-        marginTop: 10
+        marginTop: 10,
+        borderRadius:5
     },
     image: {
-        marginLeft: 68,
-        marginTop: 13
+        marginLeft: 45,
+        marginTop: 13,
+    
     },
     viewTen: {
         alignSelf: 'center',
-        marginTop: 210
+        marginTop: 210,
+        marginBottom:20
     },
     textSix: {
         fontSize: 18,
@@ -169,7 +176,8 @@ const styles = StyleSheet.create({
     },
     textSeven: {
         fontSize: 15,
-        color: 'blue'
+        color: '#1e88e5',
+        fontWeight:'400 '
     }
 
 })

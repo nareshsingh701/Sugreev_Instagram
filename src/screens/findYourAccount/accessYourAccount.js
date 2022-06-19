@@ -27,6 +27,9 @@ const AccessYourAccount = ({ route, navigation }) => {
                
             </View>
             </TouchableOpacity>
+            <View style={styles.viewFour}>
+                <Text style={styles.textTwo}>Can`t reset your password?</Text>
+            </View>
         </View>
     )
 }
@@ -69,7 +72,7 @@ const styles = StyleSheet.create({
     },
 
     textOne: {
-        marginLeft: 15,
+        marginLeft: 10,
         fontSize: 20,
         fontWeight: 'bold',
         marginTop: 10,
@@ -88,8 +91,15 @@ const styles = StyleSheet.create({
         height: 50,
         width: 350,
         alignSelf: 'center'
-
-    },
-
+     },
+viewFour:{
+    marginTop:15,
+},
+textTwo:{
+    fontSize:20,
+    fontWeight:'500',
+    marginLeft:37,
+    color:'#1a237e'
+}
 
 })
