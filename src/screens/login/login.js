@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, ScrollView, Linking } from 'react-native'
 import React, { useState } from 'react'
 
 const Login = (props) => {
@@ -17,7 +17,7 @@ const Login = (props) => {
   let isButton = text.length <= 1;
   const onPressNext = () => {
     const combin = text;
-    //  props.navigation.navigate('Login')
+      props.navigation.navigate('Instagram')
   }
   const onChange = (value) => {
     changeText(value)
@@ -67,7 +67,10 @@ const Login = (props) => {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.viewTree}>
+        <TouchableOpacity  disabled={isButton}
+                onPress={() => onPressNext()}
+         style={styles.viewTree}
+        >
           <Text style={styles.textTwo}>Log in</Text>
         </TouchableOpacity>
 
@@ -92,7 +95,7 @@ const Login = (props) => {
           </View>
           <View>
             <TouchableOpacity>
-              <Text style={styles.textSix}>Log in with Facebook</Text>
+              <Text style={styles.textSix} onPress={()=>Linking.openURL('https://m.facebook.com/v2.3/dialog/oauth?app_id=124024574287414&cbt=1655689124686&e2e=%7B%22init%22%3A1655689124686%7D&sso=chrome_custom_tab&scope=email&state=%7B%220_auth_logger_id%22%3A%22bf00d35b-31f7-4cb8-9030-8c9f01fac215%22%2C%227_challenge%22%3A%22u5a6sv4urcnf4j15g2au%22%2C%223_method%22%3A%22custom_tab%22%7D&redirect_uri=fbconnect%3A%2F%2Fcct.com.instagram.android&response_type=token%2Csigned_request%2Cgraph_domain%2Cgranted_scopes&return_scopes=true')}>Log in with Facebook</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -245,10 +248,11 @@ color:'#000'
   },
   imageThree: {
     alignSelf: 'center',
-  //  height: 25,
-   // width: 25
+  marginTop:5,
+  marginLeft:5
+   
   },
   textNine: {
-    fontSize: 20
+    fontSize: 15
   }
 })

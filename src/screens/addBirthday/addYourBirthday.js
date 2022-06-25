@@ -5,7 +5,7 @@ const AddYourBirthday = () => {
   return (
     <View style={styles.container}>
       <View style={styles.view}>
-        <Image resizeMode={'cover'}style={styles.image}source={require('../assets/images/birthday.png')}/>
+        <Image resizeMode={'cover'}style={styles.image}source={require('../../assets/images/birthday.png')}/>
       </View>
       <View style={styles.viewOne}>
         <Text style={styles.text}>Add your birthday</Text>

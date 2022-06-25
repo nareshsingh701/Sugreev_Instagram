@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image,ScrollView } from 'react-native'
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image,ScrollView, Linking } from 'react-native'
 import React,{useState} from 'react'
 
 const LoginHelp = (props) => {
     const [name,setName]=useState('');
-    let isButton=name.length<= 5;
+    let isButton=name.length<= 1;
 
     const user=()=>{
         navigation.navigate("accessYourAccount",{
@@ -31,7 +31,9 @@ const LoginHelp = (props) => {
                    onChangeText={(text)=>setName(text)}
                     />
             </View>
-            <TouchableOpacity onPress={() => props.navigation.navigate('accessYourAccount',{user,userName:name})}>
+            <TouchableOpacity
+            disabled={isButton}
+            onPress={() => props.navigation.navigate('accessYourAccount',{user,userName:name})}>
                 <View style={styles.viewFour}>
                     <Text style={styles.textFour}>Next</Text>
                 </View>
@@ -53,7 +55,7 @@ const LoginHelp = (props) => {
                 </View>
                 <TouchableOpacity>
                     <View>
-                        <Text style={styles.textSix}>Log in with Facebook</Text>
+                        <Text style={styles.textSix} onPress={()=>Linking.openURL('https://m.facebook.com/v2.3/dialog/oauth?app_id=124024574287414&cbt=1655689124686&e2e=%7B%22init%22%3A1655689124686%7D&sso=chrome_custom_tab&scope=email&state=%7B%220_auth_logger_id%22%3A%22bf00d35b-31f7-4cb8-9030-8c9f01fac215%22%2C%227_challenge%22%3A%22u5a6sv4urcnf4j15g2au%22%2C%223_method%22%3A%22custom_tab%22%7D&redirect_uri=fbconnect%3A%2F%2Fcct.com.instagram.android&response_type=token%2Csigned_request%2Cgraph_domain%2Cgranted_scopes&return_scopes=true')}>Log in with Facebook</Text>
                     </View>
                 </TouchableOpacity>
             </View>

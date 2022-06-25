@@ -39,7 +39,8 @@ viewOne:{
 },
 text:{
     fontSize:25,
-    marginLeft:10
+    marginLeft:10,
+    color:'#000'
 },
 viewTwo:{
     flexDirection:'row'

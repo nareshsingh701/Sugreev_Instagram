@@ -11,13 +11,16 @@ import LoginHelp from '../screens/getHelpLogging/loginHelp';
 import AccessYourAccount from '../screens/findYourAccount/accessYourAccount';
 import SignUp from '../screens/signup';
 import NameAndPassword from '../screens/signup/namePassword/nameAndPassword';
-import AddYourBirthday from '../screens/addYourBirthday';
+import AddYourBirthday from '../screens/addBirthday/addYourBirthday';
+import ResetPassword from '../screens/resetYourPassword/resetPassword';
+import Instagram from '../screens/home/instagram';
+
 
  const Stack = createNativeStackNavigator();
  const Navigation = () => {
      return (
          <NavigationContainer>
-             <Stack.Navigator initialRouteName='Splash'>
+             <Stack.Navigator initialRouteName='Instagram'>
                  <Stack.Screen  name="Login" component={Login}/> 
                  <Stack.Screen  name="Splash" component={Splash}/>
                  <Stack.Screen name="languageList" component={LanguageList}/>
@@ -26,6 +29,8 @@ import AddYourBirthday from '../screens/addYourBirthday';
                  <Stack.Screen  name={"SignUp"} component ={SignUp} />
                  <Stack.Screen  name={"NameAndPassword"} component ={NameAndPassword} />
                  <Stack.Screen  name={"AddYourBirthday"} component ={AddYourBirthday} />
+                 <Stack.Screen  name={"ResetPassword"} component ={ResetPassword} />
+                 <Stack.Screen options={{headerShown:false}} name={"Instagram"} component ={Instagram} />
             </Stack.Navigator>
          </NavigationContainer>
      );
