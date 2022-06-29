@@ -1,6 +1,8 @@
  import * as React from 'react';
  import { NavigationContainer } from '@react-navigation/native';
  import { createNativeStackNavigator } from '@react-navigation/native-stack';
+ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
  import { createDrawerNavigator } from '@react-navigation/native'
  import { TabView, SceneMap } from 'react-native-tab-view'
 
@@ -14,6 +16,7 @@ import NameAndPassword from '../screens/signup/namePassword/nameAndPassword';
 import AddYourBirthday from '../screens/addBirthday/addYourBirthday';
 import ResetPassword from '../screens/resetYourPassword/resetPassword';
 import Instagram from '../screens/home/instagram';
+import Gallery from '../screens/yourStory/gallery';
 
 
  const Stack = createNativeStackNavigator();
@@ -31,6 +34,7 @@ import Instagram from '../screens/home/instagram';
                  <Stack.Screen  name={"AddYourBirthday"} component ={AddYourBirthday} />
                  <Stack.Screen  name={"ResetPassword"} component ={ResetPassword} />
                  <Stack.Screen options={{headerShown:false}} name={"Instagram"} component ={Instagram} />
+                 <Stack.Screen options={{headerShown:false}}  name={"Gallery"} component ={Gallery} />
             </Stack.Navigator>
          </NavigationContainer>
      );
