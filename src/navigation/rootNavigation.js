@@ -2,7 +2,7 @@
  import { NavigationContainer } from '@react-navigation/native';
  import { createNativeStackNavigator } from '@react-navigation/native-stack';
  import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+ 
  import { createDrawerNavigator } from '@react-navigation/native'
  import { TabView, SceneMap } from 'react-native-tab-view'
 
@@ -19,9 +19,16 @@ import Instagram from '../screens/home/instagram';
 import Gallery from '../screens/yourStory/gallery';
 import NewGroup from '../screens/add/newGroup';
 import Message from '../screens/messenger/message';
+import Chat from '../screens/newMessage/chat';
 
 
  const Stack = createNativeStackNavigator();
+ const Tab =createBottomTabNavigator();
+
+
+
+
+
  const Navigation = () => {
      return (
          <NavigationContainer>
@@ -34,12 +41,12 @@ import Message from '../screens/messenger/message';
                  <Stack.Screen  name={"SignUp"} component ={SignUp} />
                  <Stack.Screen  name={"NameAndPassword"} component ={NameAndPassword} />
                  <Stack.Screen  name={"AddYourBirthday"} component ={AddYourBirthday} />
-                 <Stack.Screen  name={"ResetPassword"} component ={ResetPassword} />
+                 <Stack.Screen  name= {"ResetPassword"} component ={ResetPassword} />
                  <Stack.Screen options={{headerShown:false}} name={"Instagram"} component ={Instagram} />
                  <Stack.Screen options={{headerShown:false}}  name={"Gallery"} component ={Gallery} />
                  <Stack.Screen  name={"NewGroup"} component ={NewGroup} />
                  <Stack.Screen  name={"Message"} component ={Message} />
-                 
+                 <Stack.Screen  name={"Chat"} component ={Chat} />
             </Stack.Navigator>
          </NavigationContainer>
      );

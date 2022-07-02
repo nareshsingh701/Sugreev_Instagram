@@ -80,12 +80,12 @@ const Login = (props) => {
   return (
 
     <View style={styles.container}>
-      <View style={styles.modalView}>
+     {/*  <View style={styles.modalView}>
         <View style={styles.viewModal}>
           <Modal
             animationType="slide"
             transparent={true}
-            visible={modalVisible}
+            visible={false}
             onRequestClose={() => {
 
               setModalVisible(!modalVisible);
@@ -125,7 +125,7 @@ const Login = (props) => {
 
           />
         </View>
-      </View>
+      </View> */}
       <ScrollView>
         <View style={styles.view}>
           <Text style={styles.textOne}>Instagram</Text>
@@ -385,7 +385,7 @@ const styles = StyleSheet.create({
     marginLeft: 5
   },
   line: {
-    borderWidth: 0.8,
+    borderWidth: 0.4,
 
   }, lineOne: {
     paddingHorizontal: 10

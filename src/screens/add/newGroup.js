@@ -18,8 +18,7 @@ const NewGroup = () => {
           placeholder='Search'
         />
       </View>
-      <View style={styles.view}>
-      </View>
+      <View style={styles.view} />
       <View style={styles.viewSuggested}>
         <Text style={styles.textSuggested}>Suggested</Text>
       </View>

@@ -10,7 +10,7 @@ const Instagram = (props) => {
         {
             name: "Ankhush Singh",
             title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
+            image: require('../../assets/images/chhotu.jpg'),
             send: "Send"
         },
         {
@@ -22,31 +22,31 @@ const Instagram = (props) => {
         {
             name: "Atul Singh",
             title: "_atul_singh",
-            image: require('../../assets/images/Anshika.jpg'),
+            image: require('../../assets/images/ankush.jpg'),
             send: "Send"
         },
         {
             name: "Rinku Singh",
             title: "_Rinku_singh",
-            image: require('../../assets/images/Anshika.jpg'),
+            image: require('../../assets/images/rajsingh.jpg'),
             send: "Send"
         },
         {
             name: "Anshika Singh",
             title: "_thakur_anshika_singh",
-            image: require('../../assets/images/Anshika.jpg'),
+            image: require('../../assets/images/rajni.jpg'),
             send: "Send"
         },
         {
             name: "Ashu Singh",
             title: "_thakur_ashu_singh",
-            image: require('../../assets/images/Anshika.jpg'),
+            image: require('../../assets/images/raj.jpg'),
             send: "Send"
         },
         {
             name: "Ankhush Singh",
             title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
+            image: require('../../assets/images/party.jpg'),
             send: "Send"
         },
         {
@@ -58,13 +58,13 @@ const Instagram = (props) => {
         {
             name: "Priyanshu Singh",
             title: "_thakur_priyanshu_singh",
-            image: require('../../assets/images/Anshika.jpg'),
+            image: require('../../assets/images/sugreev.jpg'),
             send: "Send"
         },
         {
             name: "Bablu Singh",
             title: "_thakur_bablu_singh",
-            image: require('../../assets/images/Anshika.jpg'),
+            image: require('../../assets/images/jadu.jpg'),
             send: "Send"
         },
         {
@@ -76,13 +76,13 @@ const Instagram = (props) => {
         {
             name: "Singh Raj",
             title: "_thakur_Raj_singh",
-            image: require('../../assets/images/Anshika.jpg'),
+            image: require('../../assets/images/rani.jpg'),
             send: "Send"
         },
         {
             name: "Sugreev Singh",
             title: "_thakur_sugreev_singh",
-            image: require('../../assets/images/Anshika.jpg'),
+            image: require('../../assets/images/anshikasingh.jpg'),
             send: "Send"
         },
         {
@@ -94,7 +94,25 @@ const Instagram = (props) => {
         {
             name: "Ankhush Singh",
             title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
+            image: require('../../assets/images/pravesh.jpg'),
+            send: "Send"
+        },
+        {
+            name: "Ankhush Singh",
+            title: "_thakur_ankhush_singh",
+            image: require('../../assets/images/rajsingh.jpg'),
+            send: "Send"
+        },
+        {
+            name: "Ankhush Singh",
+            title: "_thakur_ankhush_singh",
+            image: require('../../assets/images/ankush.jpg'),
+            send: "Send"
+        },
+        {
+            name: "Ankhush Singh",
+            title: "_thakur_ankhush_singh",
+            image: require('../../assets/images/chhotu.jpg'),
             send: "Send"
         },
         {
@@ -106,25 +124,7 @@ const Instagram = (props) => {
         {
             name: "Ankhush Singh",
             title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
-            send: "Send"
-        },
-        {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
-            send: "Send"
-        },
-        {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
-            send: "Send"
-        },
-        {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
+            image: require('../../assets/images/rajni.jpg'),
             send: "Send"
         },
     ];
@@ -154,27 +154,27 @@ const Instagram = (props) => {
         },
         {
             name: "Ankush Singh",
-            image: require('../../assets/images/Anshika.jpg')
+            image: require('../../assets/images/ankush.jpg')
         },
         {
             name: "Naresh Singh",
-            image: require('../../assets/images/Anshika.jpg')
+            image: require('../../assets/images/party.jpg')
         },
         {
             name: "Sugreev Singh",
-            image: require('../../assets/images/Anshika.jpg')
+            image: require('../../assets/images/rajsingh.jpg')
         },
         {
             name: "Anshika Singh",
-            image: require('../../assets/images/Anshika.jpg')
+            image: require('../../assets/images/rani.jpg')
         },
         {
             name: "Atul Singh",
-            image: require('../../assets/images/Anshika.jpg')
+            image: require('../../assets/images/chhotu.jpg')
         },
         {
             name: "Rinku Singh",
-            image: require('../../assets/images/Anshika.jpg')
+            image: require('../../assets/images/raj.jpg')
         },
     ]
     const openGallery = () => {
@@ -233,7 +233,7 @@ const Instagram = (props) => {
                     <View style={styles.viewFive}>
                         <TouchableOpacity>
                             <View style={styles.viewSix}>
-                                <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/Anshika.jpg')} />
+                                <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/rajsingh.jpg')} />
                                 <Text style={styles.textOne}>Anshika_Singh</Text>
                             </View>
                         </TouchableOpacity>
@@ -243,7 +243,7 @@ const Instagram = (props) => {
                     </View>
                 </View>
                 <View style={styles.viewSeven}>
-                    <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/Anshika.jpg')} />
+                    <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/sugreev.jpg')} />
                 </View>
                 <View>
                     <View style={styles.viewHeart}>
@@ -272,7 +272,7 @@ const Instagram = (props) => {
                 <View style={styles.viewTextInput}>
 
                     <View style={styles.textInputView}>
-                        <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/Anshika.jpg')} />
+                        <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/ankush.jpg')} />
                         <TextInput style={styles.textInput}
                             placeholder='Add a comment...'
                         />
@@ -288,7 +288,7 @@ const Instagram = (props) => {
                     <View style={styles.viewFive}>
                         <TouchableOpacity>
                             <View style={styles.viewSix}>
-                                <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/Anshika.jpg')} />
+                                <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/rajsingh.jpg')} />
                                 <Text style={styles.textOne}>Anshika_Singh</Text>
                             </View>
                         </TouchableOpacity>
@@ -298,7 +298,7 @@ const Instagram = (props) => {
                     </View>
                 </View>
                 <View style={styles.viewSeven}>
-                    <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/Anshika.jpg')} />
+                    <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/jadu.jpg')} />
                 </View>
                 <View>
                     <View style={styles.viewHeart}>
@@ -327,7 +327,7 @@ const Instagram = (props) => {
                 <View style={styles.viewTextInput}>
 
                     <View style={styles.textInputView}>
-                        <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/Anshika.jpg')} />
+                        <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/party.jpg')} />
                         <TextInput style={styles.textInput}
                             placeholder='Add a comment...'
                         />
@@ -343,7 +343,7 @@ const Instagram = (props) => {
                     <View style={styles.viewFive}>
                         <TouchableOpacity>
                             <View style={styles.viewSix}>
-                                <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/Anshika.jpg')} />
+                                <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/anshikasingh.jpg')} />
                                 <Text style={styles.textOne}>Anshika_Singh</Text>
                             </View>
                         </TouchableOpacity>
@@ -353,7 +353,7 @@ const Instagram = (props) => {
                     </View>
                 </View>
                 <View style={styles.viewSeven}>
-                    <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/Anshika.jpg')} />
+                    <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/rani.jpg')} />
                 </View>
 
                 <View style={styles.viewHeart}>
@@ -382,7 +382,7 @@ const Instagram = (props) => {
                 <View style={styles.viewTextInput}>
 
                     <View style={styles.textInputView}>
-                        <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/Anshika.jpg')} />
+                        <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/rajni.jpg')} />
                         <TextInput style={styles.textInput}
                             placeholder='Add a comment...'
                         />
@@ -398,7 +398,7 @@ const Instagram = (props) => {
                     <View style={styles.viewFive}>
                         <TouchableOpacity>
                             <View style={styles.viewSix}>
-                                <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/Anshika.jpg')} />
+                                <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/raj.jpg')} />
                                 <Text style={styles.textOne}>Anshika_Singh</Text>
                             </View>
                         </TouchableOpacity>
@@ -408,7 +408,7 @@ const Instagram = (props) => {
                     </View>
                 </View>
                 <View style={styles.viewSeven}>
-                    <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/Anshika.jpg')} />
+                    <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/chhotu.jpg')} />
                 </View>
                 <View>
                     <View style={styles.viewHeart}>
@@ -437,7 +437,7 @@ const Instagram = (props) => {
                 <View style={styles.viewTextInput}>
 
                     <View style={styles.textInputView}>
-                        <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/Anshika.jpg')} />
+                        <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/jadu.jpg')} />
                         <TextInput style={styles.textInput}
                             placeholder='Add a comment...'
                         />
@@ -449,6 +449,118 @@ const Instagram = (props) => {
                         <Image resizeMode={'cover'} style={styles.imageSix} source={require('../../assets/images/iconPlus.png')} />
                     </View>
                 </View>
+                
+                <View style={styles.viewFour}>
+                    <View style={styles.viewFive}>
+                        <TouchableOpacity>
+                            <View style={styles.viewSix}>
+                                <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/anshikasingh.jpg')} />
+                                <Text style={styles.textOne}>Anshika_Singh</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Image resizeMode={'cover'} style={styles.imageSix} source={require('../../assets/images/dotThree.png')} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <View style={styles.viewSeven}>
+                    <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/party.jpg')} />
+                </View>
+
+                <View style={styles.viewHeart}>
+
+                    <View style={styles.heart}>
+                        <TouchableOpacity>
+                            <Image resizeMode={'cover'} style={styles.imageHeart} source={require('../../assets/images/heart.png')} />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <Image resizeMode={'cover'} style={styles.speech} source={require('../../assets/images/speech.png')} />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Image resizeMode={'cover'} style={styles.sent} source={require('../../assets/images/sent.png')} />
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={styles.bookmark}>
+                        <TouchableOpacity>
+                            <Image resizeMode={'cover'} style={styles.imageBookmark} source={require('../../assets/images/bookmark.png')} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
+
+                <View style={styles.viewTextInput}>
+
+                    <View style={styles.textInputView}>
+                        <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/rajni.jpg')} />
+                        <TextInput style={styles.textInput}
+                            placeholder='Add a comment...'
+                        />
+
+                    </View>
+                    <View style={styles.icon}>
+                        <Image resizeMode={'cover'} style={styles.imageSix} source={require('../../assets/images/redHeart.png')} />
+                        <Image resizeMode={'cover'} style={styles.imageSix} source={require('../../assets/images/hand.png')} />
+                        <Image resizeMode={'cover'} style={styles.imageSix} source={require('../../assets/images/iconPlus.png')} />
+                    </View>
+                </View>
+                <View style={styles.viewFour}>
+                    <View style={styles.viewFive}>
+                        <TouchableOpacity>
+                            <View style={styles.viewSix}>
+                                <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/raj.jpg')} />
+                                <Text style={styles.textOne}>Anshika_Singh</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Image resizeMode={'cover'} style={styles.imageSix} source={require('../../assets/images/dotThree.png')} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <View style={styles.viewSeven}>
+                    <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/ankush.jpg')} />
+                </View>
+                <View>
+                    <View style={styles.viewHeart}>
+
+                        <View style={styles.heart}>
+                            <TouchableOpacity>
+                                <Image resizeMode={'cover'} style={styles.imageHeart} source={require('../../assets/images/heart.png')} />
+                            </TouchableOpacity>
+
+                            <TouchableOpacity>
+                                <Image resizeMode={'cover'} style={styles.speech} source={require('../../assets/images/speech.png')} />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Image resizeMode={'cover'} style={styles.sent} source={require('../../assets/images/sent.png')} />
+                            </TouchableOpacity>
+                        </View>
+
+                        <View style={styles.bookmark}>
+                            <TouchableOpacity>
+                                <Image resizeMode={'cover'} style={styles.imageBookmark} source={require('../../assets/images/bookmark.png')} />
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </View>
+
+                <View style={styles.viewTextInput}>
+
+                    <View style={styles.textInputView}>
+                        <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/jadu.jpg')} />
+                        <TextInput style={styles.textInput}
+                            placeholder='Add a comment...'
+                        />
+
+                    </View>
+                    <View style={styles.icon}>
+                        <Image resizeMode={'cover'} style={styles.imageSix} source={require('../../assets/images/redHeart.png')} />
+                        <Image resizeMode={'cover'} style={styles.imageSix} source={require('../../assets/images/hand.png')} />
+                        <Image resizeMode={'cover'} style={styles.imageSix} source={require('../../assets/images/iconPlus.png')} />
+                    </View>
+                </View>
+
             </ScrollView>
             <View style={styles.viewModal}>
                 <Modal
@@ -676,8 +788,8 @@ const styles = StyleSheet.create({
     },
     viewTwo: {
         flexDirection: 'row',
-        marginTop: 20,
-        padding: 10
+        marginTop: 25,
+        margin:15
     },
     text: {
         fontSize: 25,
@@ -939,11 +1051,11 @@ const styles = StyleSheet.create({
     },
     follow: {
         height: 100,
-        width: '50%',
+        width: '40%',
         backgroundColor: '#e6e6e6',
         borderRadius: 5,
         marginTop: 70,
-        margin: 10
+        margin: 15
     },
     viewChecked: {
         flexDirection: 'row',
@@ -976,7 +1088,7 @@ const styles = StyleSheet.create({
     },
     viewModeOne: {
         alignItems: 'flex-end',
-        marginTop: 70
+        marginTop: 75
     },
     viewStarTwo: {
         borderWidth: 0.4,
@@ -1002,7 +1114,7 @@ const styles = StyleSheet.create({
     viewShare: {
         height: 50,
         width: 50,
-        borderRadius: 25,
+        borderRadius: 30,
         borderWidth: 1,
         borderColor: 'gray'
     },
@@ -1050,7 +1162,7 @@ const styles = StyleSheet.create({
     viewReport: {
         height: 50,
         width: 50,
-        borderRadius: 25,
+        borderRadius: 30,
         borderWidth: 1,
         borderColor: 'red'
     },
