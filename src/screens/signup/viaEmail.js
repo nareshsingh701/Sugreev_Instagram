@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
-    marginTop: 12,
+    marginTop: 10,
     fontSize: 18,
     color: '#fff',
 

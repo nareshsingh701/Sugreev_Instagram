@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 
 const Instagram = (props) => {
     const [modalVisible, setModalVisible] = useState(false);
+    const [madeVisible, setMadeVisible] = useState(false);
+    const [modeVisible, setModeVisible] = useState(false);
+    const [comeVisible, setComeVisible] = useState(false);
     const send = [
         {
             name: "Ankhush Singh",
@@ -11,8 +14,32 @@ const Instagram = (props) => {
             send: "Send"
         },
         {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
+            name: "Naresh Singh",
+            title: "_thakur_naresh_singh",
+            image: require('../../assets/images/Anshika.jpg'),
+            send: "Send"
+        },
+        {
+            name: "Atul Singh",
+            title: "_atul_singh",
+            image: require('../../assets/images/Anshika.jpg'),
+            send: "Send"
+        },
+        {
+            name: "Rinku Singh",
+            title: "_Rinku_singh",
+            image: require('../../assets/images/Anshika.jpg'),
+            send: "Send"
+        },
+        {
+            name: "Anshika Singh",
+            title: "_thakur_anshika_singh",
+            image: require('../../assets/images/Anshika.jpg'),
+            send: "Send"
+        },
+        {
+            name: "Ashu Singh",
+            title: "_thakur_ashu_singh",
             image: require('../../assets/images/Anshika.jpg'),
             send: "Send"
         },
@@ -23,8 +50,20 @@ const Instagram = (props) => {
             send: "Send"
         },
         {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
+            name: "Anshu Singh",
+            title: "_thakur_singh",
+            image: require('../../assets/images/Anshika.jpg'),
+            send: "Send"
+        },
+        {
+            name: "Priyanshu Singh",
+            title: "_thakur_priyanshu_singh",
+            image: require('../../assets/images/Anshika.jpg'),
+            send: "Send"
+        },
+        {
+            name: "Bablu Singh",
+            title: "_thakur_bablu_singh",
             image: require('../../assets/images/Anshika.jpg'),
             send: "Send"
         },
@@ -35,50 +74,14 @@ const Instagram = (props) => {
             send: "Send"
         },
         {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
+            name: "Singh Raj",
+            title: "_thakur_Raj_singh",
             image: require('../../assets/images/Anshika.jpg'),
             send: "Send"
         },
         {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
-            send: "Send"
-        },
-        {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
-            send: "Send"
-        },
-        {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
-            send: "Send"
-        },
-        {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
-            send: "Send"
-        },
-        {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
-            send: "Send"
-        },
-        {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
-            image: require('../../assets/images/Anshika.jpg'),
-            send: "Send"
-        },
-        {
-            name: "Ankhush Singh",
-            title: "_thakur_ankhush_singh",
+            name: "Sugreev Singh",
+            title: "_thakur_sugreev_singh",
             image: require('../../assets/images/Anshika.jpg'),
             send: "Send"
         },
@@ -196,23 +199,24 @@ const Instagram = (props) => {
                 <View style={styles.viewOne}>
 
                     <View style={styles.viewTwo}>
-
                         <Text style={styles.text}>Instagram</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => setMadeVisible(true)}>
                             <Image resizeMode={'cover'} style={styles.imageTwo} source={require('../../assets/images/list.png')} />
                         </TouchableOpacity>
                     </View>
 
                     <View style={styles.viewThree}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => setModeVisible(true)}>
                             <Image resizeMode={'cover'} style={styles.imageThree} source={require('../../assets/images/plusicons.png')} />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>props.navigation.navigate('Message')}>
                             <Image resizeMode={'cover'} style={styles.imageFour} source={require('../../assets/images/messenger.png')} />
                         </TouchableOpacity>
                     </View>
                 </View>
             </View>
+
+
             <ScrollView
                 showsVerticalScrollIndicator={false}
                 showsHorizontalScrollIndicator={false}
@@ -233,7 +237,7 @@ const Instagram = (props) => {
                                 <Text style={styles.textOne}>Anshika_Singh</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => setComeVisible(true)}>
                             <Image resizeMode={'cover'} style={styles.imageSix} source={require('../../assets/images/dotThree.png')} />
                         </TouchableOpacity>
                     </View>
@@ -351,29 +355,29 @@ const Instagram = (props) => {
                 <View style={styles.viewSeven}>
                     <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/Anshika.jpg')} />
                 </View>
-                <View>
-                    <View style={styles.viewHeart}>
 
-                        <View style={styles.heart}>
-                            <TouchableOpacity>
-                                <Image resizeMode={'cover'} style={styles.imageHeart} source={require('../../assets/images/heart.png')} />
-                            </TouchableOpacity>
+                <View style={styles.viewHeart}>
 
-                            <TouchableOpacity>
-                                <Image resizeMode={'cover'} style={styles.speech} source={require('../../assets/images/speech.png')} />
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <Image resizeMode={'cover'} style={styles.sent} source={require('../../assets/images/sent.png')} />
-                            </TouchableOpacity>
-                        </View>
+                    <View style={styles.heart}>
+                        <TouchableOpacity>
+                            <Image resizeMode={'cover'} style={styles.imageHeart} source={require('../../assets/images/heart.png')} />
+                        </TouchableOpacity>
 
-                        <View style={styles.bookmark}>
-                            <TouchableOpacity>
-                                <Image resizeMode={'cover'} style={styles.imageBookmark} source={require('../../assets/images/bookmark.png')} />
-                            </TouchableOpacity>
-                        </View>
+                        <TouchableOpacity>
+                            <Image resizeMode={'cover'} style={styles.speech} source={require('../../assets/images/speech.png')} />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Image resizeMode={'cover'} style={styles.sent} source={require('../../assets/images/sent.png')} />
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={styles.bookmark}>
+                        <TouchableOpacity>
+                            <Image resizeMode={'cover'} style={styles.imageBookmark} source={require('../../assets/images/bookmark.png')} />
+                        </TouchableOpacity>
                     </View>
                 </View>
+
 
                 <View style={styles.viewTextInput}>
 
@@ -451,6 +455,10 @@ const Instagram = (props) => {
                     animationType="slide"
                     visible={modalVisible}
                     transparent={true}
+                    onRequestClose={() => {
+
+                        setModalVisible(!modalVisible);
+                    }}
                 >
                     <View style={styles.modalView}>
                         <View style={styles.small}>
@@ -474,7 +482,7 @@ const Instagram = (props) => {
                                         />
                                     </View>
 
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={() => props.navigation.navigate('NewGroup')}>
                                         <Image resizeMode={'cover'} style={styles.user} source={require('../../assets/images/userGroup.png')} />
                                     </TouchableOpacity>
                                 </View>
@@ -499,6 +507,151 @@ const Instagram = (props) => {
                         </View>
                     </View>
                 </Modal>
+                <View style={styles.followView}>
+                    <Modal
+                        animationType="fade"
+                        visible={madeVisible}
+                        transparent={true}
+                        onRequestClose={() => {
+
+                            setMadeVisible(!madeVisible);
+                        }}
+                    >
+
+                        <View style={styles.follow}>
+                            <TouchableOpacity>
+                                <View style={styles.viewChecked} >
+                                    <Text style={styles.followText}>Following</Text>
+                                    <Image resizeMode={'cover'} style={styles.checkedUser} source={require('../../assets/images/checkedUser.png')} />
+                                </View>
+                            </TouchableOpacity>
+                            <View style={styles.viewStar}>
+
+                            </View>
+                            <TouchableOpacity>
+                                <View style={styles.viewChecked} >
+                                    <Text style={styles.followText}>Favorites</Text>
+                                    <Image resizeMode={'cover'} style={styles.imageStar} source={require('../../assets/images/star.png')} />
+                                </View>
+                            </TouchableOpacity>
+                        </View>
+                    </Modal>
+                </View>
+                <View style={styles.viewMode}>
+                    <Modal
+                        animationType="fade"
+                        visible={modeVisible}
+                        transparent={true}
+                        onRequestClose={() => {
+
+                            setModeVisible(!modeVisible);
+                        }}
+                    >
+                        <View style={styles.viewModeOne}>
+                            <View style={styles.modeView}>
+                                <View>
+                                    <TouchableOpacity>
+                                        <View style={styles.viewChecked} >
+                                            <Text style={styles.followText}>Post</Text>
+                                            <Image resizeMode={'cover'} style={styles.checkedUser} source={require('../../assets/images/post.png')} />
+                                        </View>
+                                    </TouchableOpacity>
+                                    <View style={styles.viewStarTwo}>
+
+                                    </View>
+                                    <TouchableOpacity>
+                                        <View style={styles.viewChecked} >
+                                            <Text style={styles.followText}>Story</Text>
+                                            <Image resizeMode={'cover'} style={styles.imageStar} source={require('../../assets/images/story.png')} />
+                                        </View>
+                                    </TouchableOpacity>
+                                    <View style={styles.viewStarTwo}>
+
+                                    </View>
+                                    <TouchableOpacity>
+                                        <View style={styles.viewChecked} >
+                                            <Text style={styles.followText}>Reel</Text>
+                                            <Image resizeMode={'cover'} style={styles.imageStar} source={require('../../assets/images/reel.png')} />
+                                        </View>
+                                    </TouchableOpacity>
+                                    <View style={styles.viewStarTwo}>
+
+                                    </View>
+                                    <TouchableOpacity>
+                                        <View style={styles.viewChecked} >
+                                            <Text style={styles.followText}>Live</Text>
+                                            <Image resizeMode={'cover'} style={styles.imageStar} source={require('../../assets/images/live.png')} />
+                                        </View>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+                        </View>
+                    </Modal>
+                </View>
+                <View>
+
+                    <Modal
+                        animationType="slide"
+                        visible={comeVisible}
+                        transparent={true}
+                        onRequestClose={() => {
+
+                            setComeVisible(!comeVisible);
+                        }}
+                    >
+                        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+                            <View style={styles.viewCome}>
+                                <View style={styles.viewLine} />
+                                <View style={styles.shareView}>
+                                    <TouchableOpacity>
+                                        <View style={styles.viewShare}>
+                                            <Image resizeMode={'cover'} style={styles.imageShare} source={require('../../assets/images/share.png.png')} />
+                                            <View>
+                                                <Text style={styles.textShare}>Share</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity>
+                                        <View style={styles.viewShare}>
+                                            <Image resizeMode={'cover'} style={styles.imageLink} source={require('../../assets/images/link.png')} />
+                                            <View>
+                                                <Text style={styles.textLink}>Link</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity>
+                                        <View style={styles.viewReport}>
+                                            <Image resizeMode={'cover'} style={styles.imageReport} source={require('../../assets/images/report.png')} />
+                                            <View>
+                                                <Text style={styles.textReport}>Report</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
+                                </View>
+                                <TouchableOpacity>
+                                    <View style={styles.reportView}>
+                                        <Text style={styles.reportText}>Why you`re seeing this post</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <View style={styles.reportViewOne}>
+                                        <Text style={styles.reportText}>Remove from Favorites</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <View style={styles.reportViewOne}>
+                                        <Text style={styles.reportText}>Hide</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <View style={styles.reportViewOne}>
+                                        <Text style={styles.reportText}>Unfollow</Text>
+                                    </View>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </Modal>
+                </View>
             </View>
         </View>
     )
@@ -567,7 +720,7 @@ const styles = StyleSheet.create({
     },
     viewSix: {
         padding: 5,
-        marginLeft: 10,
+        paddingHorizontal: 16,
         flexDirection: 'row'
     },
     textOne: {
@@ -621,7 +774,7 @@ const styles = StyleSheet.create({
     },
     heart: {
         flexDirection: 'row',
-
+        paddingHorizontal: 16,
         padding: 10
     },
     bookmark: {
@@ -650,11 +803,10 @@ const styles = StyleSheet.create({
     viewTextInput: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingHorizontal: 16
+        paddingHorizontal: 13
     },
     textInputView: {
         padding: 5,
-
         flexDirection: 'row'
     },
     icon: {
@@ -685,7 +837,7 @@ const styles = StyleSheet.create({
     },
     padding: {
         marginTop: 10,
-        paddingHorizontal: 16
+        paddingHorizontal: 13
     },
     line: {
         height: '100%',
@@ -714,8 +866,8 @@ const styles = StyleSheet.create({
     search: {
         height: 25,
         width: 25,
-
-        marginLeft: 10
+        marginLeft: 10,
+        marginTop: 8
     },
     textLine: {
         fontSize: 16,
@@ -724,17 +876,15 @@ const styles = StyleSheet.create({
     },
     lineThree: {
         flexDirection: 'row',
-        padding: 5
     },
     user: {
         marginRight: 10,
-        marginTop: 5
+        marginTop: 8
     },
     viewReel: {
         flexDirection: 'row',
         paddingHorizontal: 16,
         marginTop: 15,
-       
     },
     imageReel: {
         height: 45,
@@ -781,7 +931,142 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 4,
+        marginTop: 2,
         color: '#fff'
+    },
+    followView: {
+        flex: 1,
+    },
+    follow: {
+        height: 100,
+        width: '50%',
+        backgroundColor: '#e6e6e6',
+        borderRadius: 5,
+        marginTop: 70,
+        margin: 10
+    },
+    viewChecked: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: 10,
+        marginTop: 10
+    },
+    followText: {
+        fontSize: 18,
+        color: '#000'
+    },
+    viewStar: {
+        borderWidth: 0.4,
+        marginTop: 15,
+        borderColor:'gray'
+    },
+    imageStar: {
+        height: 30,
+        width: 30
+    },
+    viewMode: {
+        flex: 1,
+    },
+    modeView: {
+        height: 200,
+        width: '35%',
+        backgroundColor: '#e6e6e6',
+        borderRadius: 5,
+
+    },
+    viewModeOne: {
+        alignItems: 'flex-end',
+        marginTop: 70
+    },
+    viewStarTwo: {
+        borderWidth: 0.4,
+        marginTop: 10
+    },
+    viewCome: {
+        height: '60%',
+        width: '100%',
+        backgroundColor: '#e6e6e6',
+        borderTopRightRadius: 15,
+        borderTopLeftRadius: 15,
+
+    },
+    viewLine: {
+
+        width: 40,
+        borderWidth: 2,
+        alignSelf: 'center',
+        marginTop: 15,
+        borderRadius: 2,
+        borderColor: 'gray'
+    },
+    viewShare: {
+        height: 50,
+        width: 50,
+        borderRadius: 25,
+        borderWidth: 1,
+        borderColor: 'gray'
+    },
+    imageShare: {
+        alignSelf: 'center',
+        marginTop: 12,
+        height: 25,
+        width: 25
+    },
+    shareView: {
+        justifyContent: 'space-around',
+        flexDirection: 'row',
+        marginTop: 15
+    },
+    imageLink: {
+        alignSelf: 'center',
+        marginTop: 12,
+        height: 25,
+        width: 25,
+    },
+    imageReport: {
+        height: 25,
+        width: 25,
+        alignSelf: 'center',
+        marginTop: 12
+    },
+    textShare: {
+        marginTop: 15,
+        marginLeft: 5,
+        fontWeight: '600',
+        color: '#000'
+    },
+    textLink: {
+        marginTop: 17,
+        marginLeft: 10,
+        fontWeight: '600',
+        color: '#000'
+    },
+    textReport: {
+        marginTop: 15,
+        marginLeft: 5,
+        fontWeight: '600',
+        color: 'red'
+    },
+    viewReport: {
+        height: 50,
+        width: 50,
+        borderRadius: 25,
+        borderWidth: 1,
+        borderColor: 'red'
+    },
+    reportView: {
+        marginTop: 40,
+        height: 45,
+        width: '100%',
+        borderColor: 'gray',
+        borderWidth: 0.4,
+        padding: 10
+    },
+    reportText: {
+        fontSize: 18,
+        color: '#000'
+    },
+    reportViewOne:{
+        padding:10
     }
 })

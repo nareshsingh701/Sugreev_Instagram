@@ -2,8 +2,8 @@ import { View, Text, StyleSheet, Image, TouchableOpacity,ScrollView } from 'reac
 import React,{useState} from 'react'
 
 
-const ResetPassword = ({route,props}) => {
-  console.log("ResetPassword",route.params.userName.image)
+const ResetPassword = ({route,navigation}) => {
+  console.log("ResetPassword",route.params.userName.userImage)
  
    
   return (
@@ -11,7 +11,7 @@ const ResetPassword = ({route,props}) => {
     <View style={styles.container}>
      
       <View>
-        <Image resizeMode={'cover'}style={styles.imageOne}source={Image} />
+        <Image resizeMode={'cover'}style={styles.imageOne}source={route.params.userImage} />
       </View>
       <View style={styles.viewThree}>
         <Text style={styles.textFour}>{route.params.userName}</Text>
@@ -37,7 +37,8 @@ const ResetPassword = ({route,props}) => {
 export default ResetPassword;
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+  
   },
   image: {
     height: 30,
@@ -48,8 +49,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 25,
     fontWeight: 'bold',
-    marginHorizontal: 20,
-    color: '#000'
+    color: '#000',
+    paddingHorizontal:16
   },
   view: {
     alignSelf: 'center'
@@ -57,8 +58,9 @@ const styles = StyleSheet.create({
   textOne:{
     fontSize:16,
     marginTop:15,
-    marginHorizontal:40,
-  color:'#000'
+   // paddingHorizontal:16,
+  color:'#000',
+ marginHorizontal:16 
   },
   viewOne:{
     width:'100%',

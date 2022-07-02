@@ -17,6 +17,8 @@ import AddYourBirthday from '../screens/addBirthday/addYourBirthday';
 import ResetPassword from '../screens/resetYourPassword/resetPassword';
 import Instagram from '../screens/home/instagram';
 import Gallery from '../screens/yourStory/gallery';
+import NewGroup from '../screens/add/newGroup';
+import Message from '../screens/messenger/message';
 
 
  const Stack = createNativeStackNavigator();
@@ -35,6 +37,9 @@ import Gallery from '../screens/yourStory/gallery';
                  <Stack.Screen  name={"ResetPassword"} component ={ResetPassword} />
                  <Stack.Screen options={{headerShown:false}} name={"Instagram"} component ={Instagram} />
                  <Stack.Screen options={{headerShown:false}}  name={"Gallery"} component ={Gallery} />
+                 <Stack.Screen  name={"NewGroup"} component ={NewGroup} />
+                 <Stack.Screen  name={"Message"} component ={Message} />
+                 
             </Stack.Navigator>
          </NavigationContainer>
      );

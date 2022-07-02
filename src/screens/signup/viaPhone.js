@@ -82,11 +82,11 @@ const styles = StyleSheet.create({
     },
     viewThree: {
         marginTop: 10
+
     }, textOne: {
-        alignSelf: 'center',
-        marginHorizontal: 35,
+    paddingHorizontal:16,
         fontSize: 14,
-       
+       textAlign:'center'
     },
     viewFour: {
         height: 50,
@@ -98,10 +98,11 @@ const styles = StyleSheet.create({
     },
     textTwo: {
         alignSelf: 'center',
-        marginTop: 12,
+        marginTop: 10,
         fontSize: 18,
-        fontWeight: '500',
-        color: '#fff'
+        fontWeight: '600',
+        color: '#fff',
+        
     },
     viewFive: {
         borderWidth: 0.4,

@@ -1,71 +1,72 @@
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image,ScrollView, Linking } from 'react-native'
-import React,{useState} from 'react'
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, ScrollView, Linking } from 'react-native'
+import React, { useState } from 'react'
 
 const LoginHelp = (props) => {
-    const [name,setName]=useState('');
-    let isButton=name.length<= 1;
+    const [name, setName] = useState('');
+    let isButton = name.length <= 1;
 
-    const user=()=>{
-        navigation.navigate("accessYourAccount",{
-            userName:name
+    const user = () => {
+        navigation.navigate("accessYourAccount", {
+            userName: name
         })
-       
+
     }
 
     return (
         <ScrollView>
-        <View style={styles.container}>
-            <View style={styles.view}>
-                <Text style={styles.text}>Login help</Text>
-            </View>
-            <View style={styles.viewOne}>
-                <Text style={styles.textTwo}>Find your account </Text>
-            </View>
-            <View style={styles.viewTwo}>
-                <Text style={styles.textThree}>Enter your username or the email or phone number linked to your account</Text>
-            </View>
-            <View style={styles.viewThree}>
-                <TextInput style={styles.textInput}
-                    placeholder='Username, email or phone'
-                   value={name} 
-                   onChangeText={(text)=>setName(text)}
+            <View style={styles.container}>
+                <View style={styles.view}>
+                    <Text style={styles.text}>Login help</Text>
+                </View>
+                <View style={styles.viewOne}>
+                    <Text style={styles.textTwo}>Find your account </Text>
+                </View>
+                <View style={styles.viewTwo}>
+                    <Text style={styles.textThree}>Enter your username or the email or phone number linked to your account.</Text>
+                </View>
+                <View style={styles.viewThree}>
+                    <TextInput style={styles.textInput}
+                        placeholder='Username, email or phone'
+                        value={name}
+                        onChangeText={(text) => setName(text)}
                     />
-            </View>
-            <TouchableOpacity
-            disabled={isButton}
-            onPress={() => props.navigation.navigate('accessYourAccount',{user,userName:name})}>
-                <View style={styles.viewFour}>
-                    <Text style={styles.textFour}>Next</Text>
                 </View>
-            </TouchableOpacity>
-            <View style={styles.viewFive}> 
-                <View style={styles.viewSix}>
-                </View>
-                <View style={styles.viewSeven}>
-                    <Text style={styles.textFive}>OR</Text>
-                </View>
-                <View style={styles.viewSix}>
-                </View>
-            </View>
-
-            <View style={styles.viewEight}>
-
-                <View>
-                    <Image resizeMode={'cover'} style={styles.image} source={require('../../assets/images/facebookBlack.png')} />
-                </View>
-                <TouchableOpacity>
-                    <View>
-                        <Text style={styles.textSix} onPress={()=>Linking.openURL('https://m.facebook.com/v2.3/dialog/oauth?app_id=124024574287414&cbt=1655689124686&e2e=%7B%22init%22%3A1655689124686%7D&sso=chrome_custom_tab&scope=email&state=%7B%220_auth_logger_id%22%3A%22bf00d35b-31f7-4cb8-9030-8c9f01fac215%22%2C%227_challenge%22%3A%22u5a6sv4urcnf4j15g2au%22%2C%223_method%22%3A%22custom_tab%22%7D&redirect_uri=fbconnect%3A%2F%2Fcct.com.instagram.android&response_type=token%2Csigned_request%2Cgraph_domain%2Cgranted_scopes&return_scopes=true')}>Log in with Facebook</Text>
+                <TouchableOpacity
+                    disabled={isButton}
+                    onPress={() => props.navigation.navigate('accessYourAccount', { user, userName: name })}>
+                    <View style={styles.viewFour}>
+                        <Text style={styles.textFour}>Next</Text>
                     </View>
                 </TouchableOpacity>
-            </View>
-            <View style={styles.viewTen}>
-                <TouchableOpacity>
-                    <Text style={styles.textSeven}>Can`t reset your password? </Text>
-                </TouchableOpacity>
-            </View>
+                <View style={styles.viewFive}>
+                    <View style={styles.viewSix}>
+                    </View>
+                    <View style={styles.viewSeven}>
+                        <Text style={styles.textFive}>OR</Text>
+                    </View>
+                    <View style={styles.viewSix}>
+                    </View>
+                </View>
 
-        </View>
+                <View style={styles.viewEight}>
+
+                    <View style={styles.viewNine}>
+                        <Image resizeMode={'cover'} style={styles.image} source={require('../../assets/images/facebookBlack.png')} />
+
+                        <TouchableOpacity>
+
+                            <Text style={styles.textSix} onPress={() => Linking.openURL('https://m.facebook.com/v2.3/dialog/oauth?app_id=124024574287414&cbt=1655689124686&e2e=%7B%22init%22%3A1655689124686%7D&sso=chrome_custom_tab&scope=email&state=%7B%220_auth_logger_id%22%3A%22bf00d35b-31f7-4cb8-9030-8c9f01fac215%22%2C%227_challenge%22%3A%22u5a6sv4urcnf4j15g2au%22%2C%223_method%22%3A%22custom_tab%22%7D&redirect_uri=fbconnect%3A%2F%2Fcct.com.instagram.android&response_type=token%2Csigned_request%2Cgraph_domain%2Cgranted_scopes&return_scopes=true')}>Log in with Facebook</Text>
+
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <View style={styles.viewTen}>
+                    <TouchableOpacity onPress={() => props.navigation.navigate('RsetPassword')}>
+                        <Text style={styles.textSeven}>Can`t reset your password? </Text>
+                    </TouchableOpacity>
+                </View>
+
+            </View>
         </ScrollView>
     )
 }
@@ -94,13 +95,14 @@ const styles = StyleSheet.create({
         color: '#000'
     },
     viewTwo: {
-        alignSelf: 'center',
+        paddingHorizontal: 25,
         marginTop: 15
     },
     textThree: {
-        marginHorizontal: 70,
+        paddingHorizontal: 16,
         fontSize: 16,
-lineHeight:27
+        lineHeight: 27,
+        textAlign: 'center'
     },
     viewThree: {
         height: 50,
@@ -138,15 +140,15 @@ lineHeight:27
     viewSix: {
         width: 127,
         borderTopWidth: 0.4,
-        marginTop: 12,
-      
+        marginTop: 14,
+        paddingHorizontal: 16
     },
     viewSeven: {
         marginHorizontal: 10,
 
     },
     textFive: {
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: '600'
     },
     viewEight: {
@@ -154,24 +156,24 @@ lineHeight:27
         width: 300,
         borderWidth: 0.8,
         borderColor: 'gray',
-        flexDirection: 'row',
         alignSelf: 'center',
         marginTop: 10,
-        borderRadius:5
+        borderRadius: 5,
+        paddingHorizontal: 16
     },
     image: {
-        marginLeft: 45,
-        marginTop: 13,
-    
+        marginTop: 12,
+
     },
     viewTen: {
         alignSelf: 'center',
-        marginTop: 210,
-        marginBottom:20
+        marginTop: 120,
+        marginBottom: 20,
+
     },
     textSix: {
-        fontSize: 18,
-        marginTop: 13,
+        fontSize: 16,
+        marginTop: 10,
         marginLeft: 5,
         fontWeight: 'bold',
         color: '#000'
@@ -179,7 +181,11 @@ lineHeight:27
     textSeven: {
         fontSize: 15,
         color: '#1e88e5',
-        fontWeight:'400 '
+        fontWeight: '400 '
+    },
+    viewNine:{
+        flexDirection:'row',
+        alignSelf:'center'
     }
 
 })

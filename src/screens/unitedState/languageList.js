@@ -38,21 +38,22 @@ viewOne:{
   marginTop:10  
 },
 text:{
-    fontSize:25,
+    fontSize:23,
     marginLeft:10,
-    color:'#000'
+    color:'#000',
+    marginTop:5
 },
 viewTwo:{
     flexDirection:'row'
 },
 textInput:{
- fontSize:25,
+ fontSize:23,
 marginTop:5, 
 marginLeft:8   
 },
 image:{
     marginLeft:10,
-    marginTop:13,
+    marginTop:17,
     height:35,
     width:35,
 }

@@ -1,7 +1,60 @@
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, ScrollView, Linking } from 'react-native'
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, ScrollView, Linking, Modal, FlatList } from 'react-native'
 import React, { useState } from 'react'
 
 const Login = (props) => {
+  const data = [
+    {
+      name: "English",
+    },
+    {
+      name: "Afrikaans",
+    },
+    {
+      name: "Bahasa Melayu",
+      title: "Malay"
+    },
+    {
+      name: "Dansk"
+    },
+    {
+      name: "Bahasa Indonesia",
+      title: "Indonesia"
+    },
+    {
+      name: "Deutsch"
+    },
+    {
+      name: "English(UK)",
+    },
+    {
+      name: "Filipino",
+    },
+    {
+      name: "Suomi",
+      title: "Finnish"
+    },
+    {
+      name: "Magyar",
+      title: "Hungariam"
+    },
+    {
+      name: "English",
+    },
+
+  ];
+  const renderListData = (listData) => {
+    const { item, index } = listData;
+    return (
+      <View style={styles.language}>
+        <View style={styles.viewLanguage}>
+          <Text style={styles.textLanguage}>{item.name}</Text>
+          <Text style={styles.languageText}>{item.title}</Text>
+        </View>
+      </View>
+    )
+  }
+
+  const [modalVisible, setModalVisible] = useState(false);
 
   const [password, changePassword] = useState('')
   let button = password.length <= 1;
@@ -17,25 +70,63 @@ const Login = (props) => {
   let isButton = text.length <= 1;
   const onPressNext = () => {
     const combin = text;
-      props.navigation.navigate('Instagram')
+    props.navigation.navigate('Instagram')
   }
   const onChange = (value) => {
     changeText(value)
-  }
+  };
+
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <View style={styles.viewTwelve}>
-          <View>
-            <TouchableOpacity onPress={() => props.navigation.navigate('languageList')}>
-              <Text style={styles.textNine}>English (United States)</Text>
-            </TouchableOpacity>
+
+    <View style={styles.container}>
+      <View style={styles.modalView}>
+        <View style={styles.viewModal}>
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+
+              setModalVisible(!modalVisible);
+            }}
+          >
+            <View style={styles.viewTwelve}>
+              <View>
+                <TouchableOpacity onPress={() => setModalVisible(true)}>
+                  <Text style={styles.textNine}>English (United States)</Text>
+                </TouchableOpacity>
+              </View>
+              <View>
+                <Image resizeMode={'cover'} style={styles.imageThree} source={require('../../assets/images/list.png')} />
+              </View>
+            </View>
+
+          </Modal>
+          <View style={styles.viewSelect}>
+            <Text style={styles.textSelect}>SELECT YOUR LANGUAGE</Text>
           </View>
-          <View>
-            <Image resizeMode={'cover'} style={styles.imageThree} source={require('../../assets/images/list.png')} />
+          <View style={styles.viewFist}>
+            <View style={styles.searchView}>
+              <Image resizeMode={'cover'} style={styles.searchImage} source={require('../../assets/images/search.png.png')} />
+              <TextInput style={styles.input}
+                placeholder='Search'
+              />
+            </View>
           </View>
+          <View style={styles.lineOne}>
+            <View style={styles.line} />
+          </View>
+
+          <FlatList
+            data={data}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={renderListData}
+
+          />
         </View>
+      </View>
+      <ScrollView>
         <View style={styles.view}>
           <Text style={styles.textOne}>Instagram</Text>
 
@@ -67,9 +158,9 @@ const Login = (props) => {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity  disabled={isButton}
-                onPress={() => onPressNext()}
-         style={styles.viewTree}
+        <TouchableOpacity disabled={isButton}
+          onPress={() => onPressNext()}
+          style={styles.viewTree}
         >
           <Text style={styles.textTwo}>Log in</Text>
         </TouchableOpacity>
@@ -95,7 +186,7 @@ const Login = (props) => {
           </View>
           <View>
             <TouchableOpacity>
-              <Text style={styles.textSix} onPress={()=>Linking.openURL('https://m.facebook.com/v2.3/dialog/oauth?app_id=124024574287414&cbt=1655689124686&e2e=%7B%22init%22%3A1655689124686%7D&sso=chrome_custom_tab&scope=email&state=%7B%220_auth_logger_id%22%3A%22bf00d35b-31f7-4cb8-9030-8c9f01fac215%22%2C%227_challenge%22%3A%22u5a6sv4urcnf4j15g2au%22%2C%223_method%22%3A%22custom_tab%22%7D&redirect_uri=fbconnect%3A%2F%2Fcct.com.instagram.android&response_type=token%2Csigned_request%2Cgraph_domain%2Cgranted_scopes&return_scopes=true')}>Log in with Facebook</Text>
+              <Text style={styles.textSix} onPress={() => Linking.openURL('https://m.facebook.com/v2.3/dialog/oauth?app_id=124024574287414&cbt=1655689124686&e2e=%7B%22init%22%3A1655689124686%7D&sso=chrome_custom_tab&scope=email&state=%7B%220_auth_logger_id%22%3A%22bf00d35b-31f7-4cb8-9030-8c9f01fac215%22%2C%227_challenge%22%3A%22u5a6sv4urcnf4j15g2au%22%2C%223_method%22%3A%22custom_tab%22%7D&redirect_uri=fbconnect%3A%2F%2Fcct.com.instagram.android&response_type=token%2Csigned_request%2Cgraph_domain%2Cgranted_scopes&return_scopes=true')}>Log in with Facebook</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -110,9 +201,11 @@ const Login = (props) => {
               <Text style={styles.textEight}>Sign up.</Text>
             </TouchableOpacity>
           </View>
+
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
+
   )
 }
 
@@ -130,7 +223,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: '600',
     marginTop: 100,
-color:'#000'
+    color: '#000'
   },
   textInput: {
     height: 50,
@@ -142,7 +235,7 @@ color:'#000'
     borderRadius: 5,
     fontSize: 15,
     marginTop: 20,
-    borderColor:'gray'
+    borderColor: 'gray'
   },
   imageOne: {
     height: 20,
@@ -158,7 +251,7 @@ color:'#000'
     borderRadius: 5,
     marginTop: 10,
     alignSelf: 'center',
-    borderColor:'gray'
+    borderColor: 'gray'
   },
   textInputOne: {
     marginLeft: 7,
@@ -176,12 +269,14 @@ color:'#000'
     textAlign: 'center',
     marginTop: 10,
     fontSize: 18,
-    fontWeight:'600'
+    fontWeight: '600'
   },
   viewfour: {
     marginTop: 15,
     flexDirection: 'row',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    marginHorizontal: 16
+
   },
   textTree: {
     fontSize: 15,
@@ -196,7 +291,7 @@ color:'#000'
     width: 150,
     borderTopWidth: 0.4,
     marginTop: 12,
-    borderColor:'gray'
+    borderColor: 'gray'
   },
   viewSeven: {
     flexDirection: 'row',
@@ -225,13 +320,14 @@ color:'#000'
   },
   viewTen: {
     borderBottomWidth: 0.6,
-    marginTop: 50
+    marginTop: 120,
+
   },
   viewEleven: {
     flexDirection: 'row',
     alignSelf: 'center',
     marginTop: 10,
-    marginBottom:10
+    marginBottom: 10
   },
   textSeven: {
     fontSize: 15
@@ -248,11 +344,67 @@ color:'#000'
   },
   imageThree: {
     alignSelf: 'center',
-  marginTop:5,
-  marginLeft:5
-   
+    marginTop: 5,
+    marginLeft: 5
+
   },
   textNine: {
     fontSize: 15
+  },
+  viewModal: {
+    height: '100%',
+    width: '100%',
+    backgroundColor: '#fff',
+    marginTop: 20
+  },
+  modalView: {
+    paddingHorizontal: 16
+  },
+  viewSelect: {
+    padding: 10
+  },
+  textSelect: {
+    fontSize: 22,
+    fontWeight: '600',
+    color: '#000'
+  },
+  viewFist: {
+    height: 50,
+    borderTopWidth: 0.4,
+
+  },
+  searchView: {
+    flexDirection: 'row',
+    paddingHorizontal: 16
+  },
+  searchImage: {
+    marginTop: 10
+  },
+  input: {
+    fontSize: 22,
+    marginLeft: 5
+  },
+  line: {
+    borderWidth: 0.8,
+
+  }, lineOne: {
+    paddingHorizontal: 10
+  },
+  viewLanguage: {
+    // padding: 10,
+
+  },
+  textLanguage: {
+    fontSize: 18,
+    color: '#000',
+    fontWeight: '600'
+  },
+  languageText: {
+    fontSize: 16,
+    fontWeight: '500'
+  },
+  language: {
+    padding: 10,
+    marginBottom:20
   }
 })

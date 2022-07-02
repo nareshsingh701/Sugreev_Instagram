@@ -2,17 +2,19 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 
 const AccessYourAccount = ({ route, navigation }) => {
+    const  [image,setImage]=useState('')
     console.log("AccessYourAccount",route.params)
       const user = () => {
         navigation.navigate("ResetPassword", {
             userName: route.params.userName,
-            
+           userImage:image 
         })
 
     }
     return (
         <View style={styles.container}>
             <View style={styles.view}>
+        
                 <Image resizeMode={'cover'} style={styles.image} source={require('../../assets/images/instagram.png.png')} />
             </View>
             <View style={styles.viewOne}>
@@ -105,6 +107,7 @@ const styles = StyleSheet.create({
     },
     viewFour: {
         marginTop: 15,
+    
     },
     textTwo: {
         fontSize: 18,
