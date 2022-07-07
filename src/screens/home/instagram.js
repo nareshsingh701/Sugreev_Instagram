@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, FlatList, TextInput, Modal } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, FlatList, TextInput, Modal,Linking } from 'react-native'
 import React, { useState } from 'react'
 
 const Instagram = (props) => {
@@ -249,11 +249,11 @@ const Instagram = (props) => {
                     <View style={styles.viewHeart}>
 
                         <View style={styles.heart}>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={()=>props.navigation.navigate('Recent')}>
                                 <Image resizeMode={'cover'} style={styles.imageHeart} source={require('../../assets/images/heart.png')} />
                             </TouchableOpacity>
 
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={()=>props.navigation.navigate('Activity')}>
                                 <Image resizeMode={'cover'} style={styles.speech} source={require('../../assets/images/speech.png')} />
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => setModalVisible(true)}>

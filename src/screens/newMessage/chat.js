@@ -30,7 +30,7 @@ const Chat = (props) => {
         {
             name: "raj singh",
             title: "brand",
-            image: require('../../assets/images/pravesh.jpg'),
+            image: require('../../assets/images/rajsingh.jpg'),
             icon: require('../../assets/images/round.png')
         },
         {

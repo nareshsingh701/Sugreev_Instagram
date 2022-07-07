@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View, Image, ScrollView, TextInput, FlatList, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TextInput, FlatList, TouchableOpacity, Modal } from 'react-native'
 import React, { useState } from 'react'
 
 const Message = (props) => {
+  const [modalVisible, setModalVisible] = useState(false);
   const data = [
     {
       name: "Ankush Singh",
@@ -104,16 +105,51 @@ const Message = (props) => {
           <TouchableOpacity onPress={() => props.navigation.goBack('Instagram')}>
             <Image resizeMode={'cover'} style={styles.imageBack} source={require('../../assets/images/left.png.png')} />
           </TouchableOpacity>
+          <TouchableOpacity onPress={() => setModalVisible(true)}>
+            <Text numberOfLines={1} style={styles.textJoya}>joyasingh12345678</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.viewImage}>
           <TouchableOpacity>
             <Image resizeMode={'cover'} style={styles.imageVideo} source={require('../../assets/images/videoIcon.png')} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={()=>props.navigation.navigate('Chat')}>
+          <TouchableOpacity onPress={() => props.navigation.navigate('Chat')}>
             <Image resizeMode={'cover'} style={styles.imagePlus} source={require('../../assets/images/plusBlack.png')} />
           </TouchableOpacity>
         </View>
       </View>
+      <Modal
+        animationType="slide"
+        visible={modalVisible}
+        transparent={true}
+        onRequestClose={() => {
+
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.viewModal}>
+          <View style={styles.viewHeight}>
+            <View style={styles.viewLine} />
+            <View style={styles.viewRound}>
+              <View style={styles.joyaView}>
+                <Image resizeMode={'cover'} style={styles.imageAnshika} source={require('../../assets/images/Anshika.jpg')} />
+                <Text style={styles.joyaText}>joyasingh12345678</Text>
+              </View>
+              <Image resizeMode={'cover'} style={styles.imageRound} source={require('../../assets/images/round.png')} />
+            </View>
+            <TouchableOpacity>
+              <View style={styles.viewBlack}>
+                <View style={styles.viewPlus}>
+                  <Image resizeMode={'cover'} style={styles.imageBlack} source={require('../../assets/images/plusBlack.png')} />
+                </View>
+                <View style={styles.viewAdd}>
+                  <Text style={styles.textAdd}>Add account</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
       <ScrollView>
         <View style={styles.viewOne}>
           <View style={styles.viewSearch}>
@@ -129,13 +165,13 @@ const Message = (props) => {
             <Text style={styles.request}>Requests</Text>
           </TouchableOpacity>
         </View>
-     
-      <FlatList
-        data={data}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={renderListData}
-      />
- </ScrollView>
+
+        <FlatList
+          data={data}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={renderListData}
+        />
+      </ScrollView>
     </View>
   )
 }
@@ -152,7 +188,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 10
   },
-
+  rowView: {
+    flexDirection: 'row'
+  },
+  textJoya: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#000',
+    marginLeft: 20,
+    marginTop: 2
+  },
   viewImage: {
     flexDirection: 'row'
   },
@@ -236,5 +281,64 @@ const styles = StyleSheet.create({
   },
   viewCamera: {
     marginTop: 15
+  },
+  viewModal: {
+    flex: 1,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+
+  },
+  viewHeight: {
+    height: 220,
+    width: '100%',
+    backgroundColor: 'pink',
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    paddingHorizontal: 16,
+
+  },
+  viewLine: {
+    width: 40,
+    borderWidth: 2,
+    alignSelf: 'center',
+    marginTop: 13,
+    borderRadius: 2,
+    borderColor: 'gray'
+  },
+  joyaView: {
+    flexDirection: 'row',
+
+  },
+  joyaText: {
+    fontSize: 16,
+    margin: 13,
+    fontWeight: '500',
+    color: '#000'
+  },
+  viewRound: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 15
+  },
+  viewPlus: {
+    height: 50,
+    width: 50,
+    borderRadius: 30,
+    borderWidth: 1,
+    marginTop: 15,
+    borderColor: 'gray',
+    flexDirection: 'row'
+  },
+  viewBlack: {
+    flexDirection: 'row'
+  },
+  viewAdd: {
+    margin: 13,
+    marginTop: 30
+  },
+  textAdd: {
+    fontSize: 16,
+    color: '#000',
+    fontWeight: '500'
   }
 })
