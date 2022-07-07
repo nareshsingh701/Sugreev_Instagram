@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View, Image, Modal, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, Modal, TouchableOpacity, Pressable } from 'react-native'
 import React, { useState } from 'react'
 
 const Profile = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [madeVisible, setMadeVisible] = useState(false);
-  const [modeVisible, setModeVisible] = useState(false);
+  const [modalOneVisible, setModalOneVisible] = useState(false);
+  const [modalTwoVisible, setModalTwoVisible] = useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.viewMain}>
@@ -31,26 +31,45 @@ const Profile = (props) => {
           setModalVisible(!modalVisible);
         }}
       >
+        <Pressable onPress={() => setModalVisible(!modalVisible)} style={{ flex: 1 }}>
+          <View style={styles.viewModalMain}>
+            <View style={styles.viewModal}>
+              <View style={styles.viewLine} />
+              <View style={styles.viewRound}>
+                <View style={styles.joyaView}>
+                  <Image resizeMode={'cover'} style={styles.imageAnshika} source={require('../../assets/images/Anshika.jpg')} />
+                  <Text style={styles.joyaText}>joyasingh12345678</Text>
+                </View>
+                <Image resizeMode={'cover'} style={styles.imageRound} source={require('../../assets/images/round.png')} />
+              </View>
+              <TouchableOpacity>
+                <View style={styles.viewBlack}>
+                  <View style={styles.viewPlus}>
+                    <Image resizeMode={'cover'} style={styles.imageBlack} source={require('../../assets/images/plusBlack.png')} />
+                  </View>
+                  <View style={styles.viewAdd}>
+                    <Text style={styles.textAdd}>Add account</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Pressable>
+      </Modal>
+      <Modal
+        animationType="slide"
+        visible={modalOneVisible}
+        transparent={true}
+        onRequestClose={() => {
+
+          setModalOneVisible(!modalOneVisible);
+        }}
+      >
         <View style={styles.viewModalMain}>
           <View style={styles.viewModal}>
-            <View style={styles.viewLine} />
-            <View style={styles.viewRound}>
-              <View style={styles.joyaView}>
-                <Image resizeMode={'cover'} style={styles.imageAnshika} source={require('../../assets/images/Anshika.jpg')} />
-                <Text style={styles.joyaText}>joyasingh12345678</Text>
-              </View>
-              <Image resizeMode={'cover'} style={styles.imageRound} source={require('../../assets/images/round.png')} />
-            </View>
-            <TouchableOpacity>
-              <View style={styles.viewBlack}>
-                <View style={styles.viewPlus}>
-                  <Image resizeMode={'cover'} style={styles.imageBlack} source={require('../../assets/images/plusBlack.png')} />
-                </View>
-                <View style={styles.viewAdd}>
-                  <Text style={styles.textAdd}>Add account</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
+            <View />
+
+            
           </View>
         </View>
       </Modal>
@@ -67,13 +86,13 @@ const Profile = (props) => {
             <Text style={styles.textPost}>Posts</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={()=>props.navigation.navigate('Follow')}>
+        <TouchableOpacity onPress={() => props.navigation.navigate('Follow')}>
           <View>
             <Text style={styles.textTwo}>3</Text>
             <Text style={styles.textPost}>Followers</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={()=>props.navigation.navigate('Follow')}>
+        <TouchableOpacity onPress={() => props.navigation.navigate('Follow')}>
           <View>
             <Text style={styles.textTwo}>17</Text>
             <Text style={styles.textPost}>Following</Text>
@@ -88,7 +107,7 @@ const Profile = (props) => {
         </View>
         <TouchableOpacity>
           <View style={styles.viewIcon}>
-          <Image resizeMode={'cover'} style={styles.imageAdd} source={require('../../assets/images/addUser.png')} />
+            <Image resizeMode={'cover'} style={styles.imageAdd} source={require('../../assets/images/addUser.png')} />
           </View>
         </TouchableOpacity>
       </View>
@@ -163,7 +182,7 @@ const styles = StyleSheet.create({
   viewModal: {
     height: 200,
     width: '100%',
-    backgroundColor: 'pink',
+    backgroundColor: '#fff',
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
     paddingHorizontal: 16
@@ -249,8 +268,8 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: '#000'
   },
-  imageAdd:{
-    alignSelf:'center',
-    marginTop:5
+  imageAdd: {
+    alignSelf: 'center',
+    marginTop: 5
   }
 })
