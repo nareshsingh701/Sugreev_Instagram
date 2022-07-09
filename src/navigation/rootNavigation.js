@@ -27,7 +27,9 @@ import Activity from '../screens/myLike/activity';
 import Discover from '../screens/myLike/discover';
 import FollowRequests from '../screens/myLike/followRequests';
 import Profile from '../screens/myProfile/profile';
-import Follow from '../screens/follow/index'
+import Follow from '../screens/follow/index';
+import Settings from '../screens/myProfile/settings';
+
 
  const Stack = createNativeStackNavigator();
  const Tab =createBottomTabNavigator();
@@ -62,6 +64,7 @@ import Follow from '../screens/follow/index'
                  <Stack.Screen  name={"FollowRequests"} component ={FollowRequests} />
                  <Stack.Screen  name={"Profile"} component ={Profile} />
                  <Stack.Screen  name={"Follow"} component ={Follow} />
+                 <Stack.Screen  name={"Settings"} component ={Settings} />
 
             </Stack.Navigator>
          </NavigationContainer>

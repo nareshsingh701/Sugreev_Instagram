@@ -5,6 +5,7 @@ const Profile = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalOneVisible, setModalOneVisible] = useState(false);
   const [modalTwoVisible, setModalTwoVisible] = useState(false);
+  const [modalThreeVisible, setModalThreeVisible] = useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.viewMain}>
@@ -15,10 +16,10 @@ const Profile = (props) => {
             <Image resizeMode={'cover'} style={styles.imageList} source={require('../../assets/images/list.png')} />
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => setModalTwoVisible(true)}>
           <Image resizeMode={'cover'} style={styles.imagePlus} source={require('../../assets/images/plusicons.png')} />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => setModalThreeVisible(true)}>
           <Image resizeMode={'cover'} style={styles.imageThreeList} source={require('../../assets/images/threeList.png')} />
         </TouchableOpacity>
       </View>
@@ -42,7 +43,7 @@ const Profile = (props) => {
                 </View>
                 <Image resizeMode={'cover'} style={styles.imageRound} source={require('../../assets/images/round.png')} />
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => setModalOneVisible(true)}>
                 <View style={styles.viewBlack}>
                   <View style={styles.viewPlus}>
                     <Image resizeMode={'cover'} style={styles.imageBlack} source={require('../../assets/images/plusBlack.png')} />
@@ -65,13 +66,118 @@ const Profile = (props) => {
           setModalOneVisible(!modalOneVisible);
         }}
       >
-        <View style={styles.viewModalMain}>
-          <View style={styles.viewModal}>
-            <View />
-
-            
+        <Pressable onPress={() => setModalOneVisible(!modalOneVisible)} style={{ flex: 1 }}>
+          <View style={styles.viewModalMain}>
+            <View style={styles.viewModalOne}>
+              <View style={styles.viewLine} />
+              <Text style={styles.textAccount}>Add account</Text>
+              <View style={styles.viewLineOne} />
+              <TouchableOpacity>
+                <View style={styles.viewLog}>
+                  <Text style={styles.textLog}>Log into existing account</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text style={styles.textCreate}>Create new account</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
+        </Pressable>
+      </Modal>
+      <Modal
+        animationType="slide"
+        visible={modalTwoVisible}
+        transparent={true}
+        onRequestClose={() => {
+
+          setModalTwoVisible(!modalTwoVisible);
+        }}
+      >
+        <Pressable onPress={() => setModalTwoVisible(!modalTwoVisible)} style={{ flex: 1 }}>
+          <View style={styles.viewModalMain}>
+            <View style={styles.viewModalTwo}>
+              <View style={styles.viewLine} />
+              <Text style={styles.textAccount}>Create</Text>
+              <View style={styles.viewLineOne} />
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/reelSmall.png')} />
+                <Text style={styles.textReel}>Reel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imagePost} source={require('../../assets/images/post.png')} />
+                <Text style={styles.textReel}>Post</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/storySmall.png')} />
+                <Text style={styles.textReel}>Story</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/highLight.png')} />
+                <Text style={styles.textReel}>Story Highlight</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/live.png')} />
+                <Text style={styles.textReel}>Live</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/book.png')} />
+                <Text style={styles.textReel}>Guide</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Pressable>
+      </Modal>
+      <Modal
+        animationType="slide"
+        visible={modalThreeVisible}
+        transparent={true}
+        onRequestClose={() => {
+
+          setModalThreeVisible(!modalThreeVisible);
+        }}
+      >
+        <Pressable onPress={() => setModalThreeVisible(!modalThreeVisible)} style={{ flex: 1 }}>
+          <View style={styles.viewModalMain}>
+            <View style={styles.viewModalTwo}>
+              <View style={styles.viewLine} />
+              
+              <TouchableOpacity onPress={()=> props.navigation.navigate('Settings')}
+               style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/setting.png')} />
+                <Text style={styles.textReel}>Settings</Text>
+              </TouchableOpacity>
+              
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageThree} source={require('../../assets/images/time.png')} />
+                <Text style={styles.textReel}>Archive</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/reelSmall.png')} />
+                <Text style={styles.textReel}>Your activity</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/qrCode.png')} />
+                <Text style={styles.textReel}>QR code</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageThree} source={require('../../assets/images/bookmark.png')} />
+                <Text style={styles.textReel}>Seved</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/starList.png')} />
+                <Text style={styles.textReel}>Close Friends</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/star.png')} />
+                <Text style={styles.textReel}>Favorites</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.reel}>
+                <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/corona.png')} />
+                <Text style={styles.textReel}>COVID-19 Information center</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Pressable>
       </Modal>
       <View style={styles.viewRaj}>
         <TouchableOpacity>
@@ -271,5 +377,74 @@ const styles = StyleSheet.create({
   imageAdd: {
     alignSelf: 'center',
     marginTop: 5
-  }
+  },
+  textAccount: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#000',
+    textAlign: 'center',
+    marginTop: 10
+  },
+  viewLineOne: {
+    width: '100%',
+    height: 0.8,
+    backgroundColor: '#cccccc',
+    marginTop: 10
+  },
+  viewModalOne: {
+    height: '40%',
+    width: '100%',
+    backgroundColor: '#fff',
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+  },
+  viewLog: {
+    height: 50,
+    width: '91%',
+    backgroundColor: '#1a75ff',
+    borderRadius: 5,
+    marginTop: 13,
+    margin: 16,
+  },
+  textLog: {
+    fontSize: 18,
+    textAlign: 'center',
+    marginTop: 10,
+    color: '#fff',
+    fontWeight: '500'
+  },
+  textCreate: {
+    fontSize: 17,
+    fontWeight: '400',
+    color: '#1a75ff',
+    textAlign: 'center'
+  },
+  viewModalTwo: {
+    height: '70%',
+    width: '100%',
+    backgroundColor: '#fff',
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+  },
+  reel: {
+    flexDirection: 'row',
+    margin: 12
+  },
+  imageReel: {
+    height: 30,
+    width: 30
+  },
+  textReel: {
+    fontSize: 18,
+    color: '#000',
+    marginLeft: 15,
+  },
+  imagePost: {
+    height: 30,
+    width: 25,
+  },
+  imageThree: {
+    height: 35,
+    width: 30
+  },
 })
