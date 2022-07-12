@@ -29,6 +29,20 @@ import FollowRequests from '../screens/myLike/followRequests';
 import Profile from '../screens/myProfile/profile';
 import Follow from '../screens/follow/index';
 import Settings from '../screens/myProfile/settings';
+import EditProfile from '../screens/myProfile/editProfile';
+import UserName from '../screens/myProfile/userName';
+import Bio from '../screens/myProfile/bio';
+import FollowAndInviteFriends from '../screens/myProfile/followAndInviteFriends';
+import Privacy from '../screens/myProfile/privacy';
+import Security from '../screens/myProfile/security';
+import Notifications from '../screens/myProfile/notifications';
+import Ads from '../screens/myProfile/ads';
+import Account from '../screens/myProfile/account';
+import Help from '../screens/myProfile/help';
+import About from '../screens/myProfile/about';
+import SetTheme from '../screens/myProfile/setTheme';
+import SwitchAccount from '../screens/myProfile/switchAccount';
+import CreateNewAccount from '../screens/myProfile/createNewAccount';
 
 
  const Stack = createNativeStackNavigator();
@@ -65,6 +79,20 @@ import Settings from '../screens/myProfile/settings';
                  <Stack.Screen  name={"Profile"} component ={Profile} />
                  <Stack.Screen  name={"Follow"} component ={Follow} />
                  <Stack.Screen  name={"Settings"} component ={Settings} />
+                 <Stack.Screen  name={"EditProfile"} component ={EditProfile} />
+                 <Stack.Screen  name={"UserName"} component ={UserName} />
+                 <Stack.Screen  name={"Bio"} component ={Bio} />
+                 <Stack.Screen  name={"FollowAndInviteFriends"} component ={FollowAndInviteFriends} />
+                 <Stack.Screen  name={"Privacy"} component ={Privacy} />
+                 <Stack.Screen  name={"Security"} component ={Security} />
+                 <Stack.Screen  name={"Notifications"} component ={Notifications} />
+                 <Stack.Screen  name={"Ads"} component ={Ads} />
+                 <Stack.Screen  name={"Account"} component ={Account} />
+                 <Stack.Screen  name={"Help"} component ={Help} />
+                 <Stack.Screen  name={"About"} component ={About} />
+                 <Stack.Screen  name={"SetTheme"} component ={SetTheme} />
+                 <Stack.Screen  name={"SwitchAccount"} component ={SwitchAccount} />
+                 <Stack.Screen  name={"CreateNewAccount"} component ={CreateNewAccount} />
 
             </Stack.Navigator>
          </NavigationContainer>

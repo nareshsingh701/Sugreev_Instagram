@@ -6,6 +6,7 @@ const Profile = (props) => {
   const [modalOneVisible, setModalOneVisible] = useState(false);
   const [modalTwoVisible, setModalTwoVisible] = useState(false);
   const [modalThreeVisible, setModalThreeVisible] = useState(false);
+  const [modalFourVisible, setModalFourVisible] = useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.viewMain}>
@@ -140,13 +141,13 @@ const Profile = (props) => {
           <View style={styles.viewModalMain}>
             <View style={styles.viewModalTwo}>
               <View style={styles.viewLine} />
-              
-              <TouchableOpacity onPress={()=> props.navigation.navigate('Settings')}
-               style={styles.reel}>
+
+              <TouchableOpacity onPress={() => props.navigation.navigate('Settings')}
+                style={styles.reel}>
                 <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/setting.png')} />
                 <Text style={styles.textReel}>Settings</Text>
               </TouchableOpacity>
-              
+
               <TouchableOpacity style={styles.reel}>
                 <Image resizeMode={'cover'} style={styles.imageThree} source={require('../../assets/images/time.png')} />
                 <Text style={styles.textReel}>Archive</Text>
@@ -181,33 +182,25 @@ const Profile = (props) => {
       </Modal>
       <View style={styles.viewRaj}>
         <TouchableOpacity>
-          <View>
             <Image resizeMode={'cover'} style={styles.imageAnshika} source={require('../../assets/images/Anshika.jpg')} />
             <Text style={styles.textSingh}>Singh Raj</Text>
-          </View>
         </TouchableOpacity>
         <TouchableOpacity>
-          <View>
             <Text style={styles.textTwo}>2</Text>
             <Text style={styles.textPost}>Posts</Text>
-          </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => props.navigation.navigate('Follow')}>
-          <View>
             <Text style={styles.textTwo}>3</Text>
             <Text style={styles.textPost}>Followers</Text>
-          </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => props.navigation.navigate('Follow')}>
-          <View>
             <Text style={styles.textTwo}>17</Text>
             <Text style={styles.textPost}>Following</Text>
-          </View>
         </TouchableOpacity>
       </View>
       <View style={styles.viewEditRow}>
         <View style={styles.viewEdit}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>props.navigation.navigate('EditProfile')}>
             <Text style={styles.textEdit}>Edit profile</Text>
           </TouchableOpacity>
         </View>
@@ -217,6 +210,7 @@ const Profile = (props) => {
           </View>
         </TouchableOpacity>
       </View>
+   
     </View>
   )
 }
@@ -435,7 +429,7 @@ const styles = StyleSheet.create({
     width: 30
   },
   textReel: {
-    fontSize: 18,
+    fontSize: 20,
     color: '#000',
     marginLeft: 15,
   },
@@ -447,4 +441,9 @@ const styles = StyleSheet.create({
     height: 35,
     width: 30
   },
+  viewModalFour: {
+    height: '100%',
+    width: '100%',
+    backgroundColor: '#fff'
+  }
 })

@@ -80,7 +80,8 @@ const Login = (props) => {
   return (
 
     <View style={styles.container}>
-     {/*  <View style={styles.modalView}>
+
+      {/* <View style={styles.modalView}>
         <View style={styles.viewModal}>
           <Modal
             animationType="slide"
@@ -125,85 +126,88 @@ const Login = (props) => {
 
           />
         </View>
-      </View> */}
+      </View>  */}
       <ScrollView>
-        <View style={styles.view}>
-          <Text style={styles.textOne}>Instagram</Text>
+        <Text style={styles.textOne}>Instagram</Text>
+        <View style={styles.padding}>
+          <View style={styles.viewLine}>
+            <TextInput style={styles.textInputOne}
+              placeholderTextColor={'#666666'}
+              placeholder='Phone number, email or username'
+              disabled={button}
+              onChangeText={onChange}
+            />
+          </View>
+          <View style={styles.viewTwo}>
+            <View style={styles.row}>
+              <TextInput
+                style={styles.textInputTwo}
+                placeholderTextColor={'#666666'}
+                disabled={button}
+                secureTextEntry={true}
+                placeholder='Password'
+                onChangePassword={password}
+              />
+              <View>
+              <TouchableOpacity>
+                <Image resizeMode={'cover'} style={styles.imageOne} source={require('../../assets/images/hide.png')} />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image resizeMode={'cover'} style={styles.imageOne} source={require('../../assets/images/eye.png')} />
+              </TouchableOpacity>
+              </View>
+            </View>
+          </View>
 
-        </View>
-        <View style={styles.viewOne} >
-          <TextInput
-            style={styles.textInput}
-            disabled={isButton}
-            placeholder='Phone number,email or username'
-            onChangeText={onChange}
-          />
-        </View>
-
-        <View style={styles.viewTwo}>
-
-          <TextInput
-            style={styles.textInputOne}
-            disabled={button}
-            secureTextEntry={true}
-            placeholder='Password'
-            onChangePassword={password}
-
-          />
-          <TouchableOpacity>
-            <Image resizeMode={'cover'} style={styles.imageOne} source={require('../../assets/images/hide.png')} />
+          <TouchableOpacity disabled={isButton}
+            onPress={() => onPressNext()}
+            style={styles.viewTree}
+          >
+            <Text style={styles.textTwo}>Log in</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Image resizeMode={'cover'} style={styles.imageOne} source={require('../../assets/images/eye.png')} />
-          </TouchableOpacity>
-        </View>
 
-        <TouchableOpacity disabled={isButton}
-          onPress={() => onPressNext()}
-          style={styles.viewTree}
-        >
-          <Text style={styles.textTwo}>Log in</Text>
-        </TouchableOpacity>
-
-        <View style={styles.viewfour}>
-          <Text style={styles.textTree}>Forgot your login details?</Text>
-          <TouchableOpacity onPress={() => props.navigation.navigate('loginHelp')}>
-            <Text style={styles.textFour}>Get help logging in.</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.viewSeven}>
-          <View style={styles.viewFive}>
-          </View>
-          <View style={styles.viewEight}>
-            <Text style={styles.textFive}>OR</Text>
-          </View>
-          <View style={styles.viewFive}>
-          </View>
-        </View>
-        <View style={styles.viewNine}>
-          <View>
-            <Image resizeMode={'cover'} style={styles.imageThree} source={require('../../assets/images/facebook.png')} />
-          </View>
-          <View>
-            <TouchableOpacity>
-              <Text style={styles.textSix} onPress={() => Linking.openURL('https://m.facebook.com/v2.3/dialog/oauth?app_id=124024574287414&cbt=1655689124686&e2e=%7B%22init%22%3A1655689124686%7D&sso=chrome_custom_tab&scope=email&state=%7B%220_auth_logger_id%22%3A%22bf00d35b-31f7-4cb8-9030-8c9f01fac215%22%2C%227_challenge%22%3A%22u5a6sv4urcnf4j15g2au%22%2C%223_method%22%3A%22custom_tab%22%7D&redirect_uri=fbconnect%3A%2F%2Fcct.com.instagram.android&response_type=token%2Csigned_request%2Cgraph_domain%2Cgranted_scopes&return_scopes=true')}>Log in with Facebook</Text>
+          <View style={styles.viewfour}>
+            <Text style={styles.textTree}>Forgot your login details?</Text>
+            <TouchableOpacity onPress={() => props.navigation.navigate('loginHelp')}>
+              <Text style={styles.textFour}>Get help logging in.</Text>
             </TouchableOpacity>
+          </View>
+          <View style={styles.viewSeven}>
+            <View style={styles.viewFive}>
+            </View>
+            <View style={styles.viewEight}>
+              <Text style={styles.textFive}>OR</Text>
+            </View>
+            <View style={styles.viewFive}>
+            </View>
+          </View>
+          <View style={styles.viewNine}>
+            <View>
+              <Image resizeMode={'cover'} style={styles.imageThree} source={require('../../assets/images/facebook.png')} />
+            </View>
+            <View>
+              <TouchableOpacity>
+                <Text style={styles.textSix} onPress={() => Linking.openURL('https://m.facebook.com/v2.3/dialog/oauth?app_id=124024574287414&cbt=1655689124686&e2e=%7B%22init%22%3A1655689124686%7D&sso=chrome_custom_tab&scope=email&state=%7B%220_auth_logger_id%22%3A%22bf00d35b-31f7-4cb8-9030-8c9f01fac215%22%2C%227_challenge%22%3A%22u5a6sv4urcnf4j15g2au%22%2C%223_method%22%3A%22custom_tab%22%7D&redirect_uri=fbconnect%3A%2F%2Fcct.com.instagram.android&response_type=token%2Csigned_request%2Cgraph_domain%2Cgranted_scopes&return_scopes=true')}>Log in with Facebook</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
         <View style={styles.viewTen}>
-        </View>
-        <View style={styles.viewEleven}>
-          <View>
-            <Text style={styles.textSeven}>Dont have an account?</Text>
-          </View>
-          <View>
-            <TouchableOpacity onPress={() => props.navigation.navigate('SignUp')}>
-              <Text style={styles.textEight}>Sign up.</Text>
-            </TouchableOpacity>
-          </View>
 
+          <View style={styles.viewEleven}>
+            <View>
+              <Text style={styles.textSeven}>Dont have an account?</Text>
+            </View>
+            <View>
+              <TouchableOpacity onPress={() => props.navigation.navigate('SignUp')}>
+                <Text style={styles.textEight}>Sign up.</Text>
+              </TouchableOpacity>
+            </View>
+            <View />
+          </View>
         </View>
       </ScrollView>
+
     </View>
 
   )
@@ -216,49 +220,55 @@ const styles = StyleSheet.create({
 
 
   },
-  view: {
-    alignSelf: 'center'
+  padding: {
+paddingHorizontal:25
+  },
+  viewLine: {
+    height: 50,
+    width: '100%',
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: '#cccccc',
+    marginTop: 20
   },
   textOne: {
-    fontSize: 30,
-    fontWeight: '600',
+    fontSize: 35,
+    fontWeight: 'bold',
     marginTop: 100,
-    color: '#000'
-  },
-  textInput: {
-    height: 50,
-    width: 300,
-    borderWidth: 0.8,
-    alignSelf: 'center',
-    padding: 10,
-    margin: 10,
-    borderRadius: 5,
-    fontSize: 15,
-    marginTop: 20,
-    borderColor: 'gray'
+    color: '#000',
+    alignSelf: 'center'
   },
   imageOne: {
     height: 20,
     width: 20,
-    marginTop: 15,
-    marginLeft: 180
+    
+
+
   },
   viewTwo: {
-    flexDirection: 'row',
     height: 50,
-    width: 300,
-    borderWidth: 0.8,
+    width: '100%',
+    borderWidth: 1,
     borderRadius: 5,
-    marginTop: 10,
-    alignSelf: 'center',
-    borderColor: 'gray'
+    borderColor: '#cccccc',
+    marginTop: 20
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10
   },
   textInputOne: {
-    marginLeft: 7,
+    marginLeft: 10,
+    fontSize: 16
+  },
+  textInputTwo: {
+    fontSize: 16,
+    width: 100
   },
   viewTree: {
     height: 50,
-    width: 300,
+    width: '100%',
     backgroundColor: '#1a8cff',
     marginTop: 20,
     borderRadius: 5,
@@ -288,7 +298,7 @@ const styles = StyleSheet.create({
     marginLeft: 5
   },
   viewFive: {
-    width: 150,
+    width: 160,
     borderTopWidth: 0.4,
     marginTop: 12,
     borderColor: 'gray'
@@ -405,6 +415,6 @@ const styles = StyleSheet.create({
   },
   language: {
     padding: 10,
-    marginBottom:20
+    marginBottom: 20
   }
 })
