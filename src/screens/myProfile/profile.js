@@ -148,11 +148,13 @@ const Profile = (props) => {
                 <Text style={styles.textReel}>Settings</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.reel}>
+              <TouchableOpacity onPress={()=>props.navigation.navigate('IndexOne')}
+              style={styles.reel}>
                 <Image resizeMode={'cover'} style={styles.imageThree} source={require('../../assets/images/time.png')} />
                 <Text style={styles.textReel}>Archive</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.reel}>
+              <TouchableOpacity onPress={()=>props.navigation.navigate('YourActivity')} 
+              style={styles.reel}>
                 <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/reelSmall.png')} />
                 <Text style={styles.textReel}>Your activity</Text>
               </TouchableOpacity>
@@ -160,11 +162,13 @@ const Profile = (props) => {
                 <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/qrCode.png')} />
                 <Text style={styles.textReel}>QR code</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.reel}>
+              <TouchableOpacity onPress={()=>props.navigation.navigate('Seved')}
+              style={styles.reel}>
                 <Image resizeMode={'cover'} style={styles.imageThree} source={require('../../assets/images/bookmark.png')} />
                 <Text style={styles.textReel}>Seved</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.reel}>
+              <TouchableOpacity onPress={()=>props.navigation.navigate('CloseFriends')} 
+              style={styles.reel}>
                 <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/starList.png')} />
                 <Text style={styles.textReel}>Close Friends</Text>
               </TouchableOpacity>

@@ -43,6 +43,10 @@ import About from '../screens/myProfile/about';
 import SetTheme from '../screens/myProfile/setTheme';
 import SwitchAccount from '../screens/myProfile/switchAccount';
 import CreateNewAccount from '../screens/myProfile/createNewAccount';
+import IndexOne from '../screens/storiesArchive/indexOne';
+import YourActivity from '../screens/myProfile/yourActivity';
+import Seved from '../screens/myProfile/seved';
+import CloseFriends from '../screens/myProfile/closeFriends';
 
 
  const Stack = createNativeStackNavigator();
@@ -93,6 +97,12 @@ import CreateNewAccount from '../screens/myProfile/createNewAccount';
                  <Stack.Screen  name={"SetTheme"} component ={SetTheme} />
                  <Stack.Screen  name={"SwitchAccount"} component ={SwitchAccount} />
                  <Stack.Screen  name={"CreateNewAccount"} component ={CreateNewAccount} />
+                 <Stack.Screen  name={"IndexOne"} component ={IndexOne} />
+                 <Stack.Screen  name={"YourActivity"} component ={YourActivity} />
+                 <Stack.Screen  name={"Seved"} component ={Seved} />
+                 <Stack.Screen  name={"CloseFriends"} component ={CloseFriends} />
+
+
 
             </Stack.Navigator>
          </NavigationContainer>

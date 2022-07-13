@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity,Modal } from 'react-native'
 import React from 'react'
 
 const CreateNewAccount = (props) => {
+
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.row}>
@@ -10,9 +11,15 @@ const CreateNewAccount = (props) => {
       </TouchableOpacity>
       <View style={styles.viewFlex}>
         <Text style={styles.instagram}>Instagram</Text>
+
         <View style={styles.viewMain}>
-<Text>Create new account</Text>
+          <TouchableOpacity>
+            <Text style={styles.textCreate}>Create new account</Text>
+          </TouchableOpacity>
         </View>
+        <TouchableOpacity onPress={()=>props.navigation.navigate('Login')}>
+          <Text style={styles.logIn}>Log in</Text>
+        </TouchableOpacity>
       </View>
 
     </View>
@@ -43,7 +50,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 70
+    marginBottom: 50
   },
   instagram: {
     fontSize: 40,
@@ -54,7 +61,20 @@ const styles = StyleSheet.create({
     height: 50,
     width: '100%',
     backgroundColor: '#0081fb',
-    borderRadius:8,
-    marginTop:40
+    borderRadius: 8,
+    marginTop: 50
+  },
+  textCreate: {
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#fff',
+    textAlign: 'center',
+    marginTop: 11
+  },
+  logIn: {
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#0081fb',
+    marginTop: 25
   }
 })
