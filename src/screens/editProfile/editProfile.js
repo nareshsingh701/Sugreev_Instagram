@@ -1,13 +1,14 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, Modal, Pressable,Linking } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, Modal, Pressable, Linking,ScrollView } from 'react-native'
 import React, { useState } from 'react'
 
 const EditProfile = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.container}>
+      <ScrollView>
       <View style={styles.viewMain}>
         <View style={styles.viewRow}>
-          <TouchableOpacity onPress={()=>props.navigation.goBack()} >
+          <TouchableOpacity onPress={() => props.navigation.goBack()} >
             <Image resizeMode={'cover'} style={styles.imageCross} source={require('../../assets/images/cross.png')} />
           </TouchableOpacity>
           <Text style={styles.textEdit}>Edit profile</Text>
@@ -49,7 +50,7 @@ const EditProfile = (props) => {
         </TouchableOpacity>
 
         <View style={styles.viewLine} />
-        <TouchableOpacity onPress={()=>props.navigation.navigate('UserName')}>
+        <TouchableOpacity onPress={() => props.navigation.navigate('UserName')}>
           <Text style={styles.userName}>Username</Text>
           <Text style={styles.textName}>anshikasingh12345</Text>
         </TouchableOpacity>
@@ -59,9 +60,9 @@ const EditProfile = (props) => {
           placeholder='Website'
         />
         <View style={styles.viewLine} />
-        <TouchableOpacity onPress={()=>props.navigation.navigate('Bio')}>
-       <Text style={styles.textInputOne}>Bio</Text>
-       </TouchableOpacity>
+        <TouchableOpacity onPress={() => props.navigation.navigate('Bio')}>
+          <Text style={styles.textInputOne}>Bio</Text>
+        </TouchableOpacity>
         <View style={styles.viewLineThree} />
       </View>
       <View style={styles.viewLineOne} />
@@ -71,6 +72,7 @@ const EditProfile = (props) => {
       <View style={styles.viewLineTwo} />
       <Text style={styles.textSwitchOne}>Personal information settings</Text>
       <View style={styles.viewLineTwo} />
+      </ScrollView>
     </View>
   )
 }
@@ -79,7 +81,8 @@ export default EditProfile;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    marginBottom:50
   },
   viewRow: {
     flexDirection: 'row',
@@ -158,7 +161,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '400',
     marginTop: 25,
-    color:'#666666'
+    color: '#666666'
   },
   viewLineOne: {
     height: 0.8,

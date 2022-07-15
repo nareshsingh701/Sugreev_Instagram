@@ -28,25 +28,27 @@ import Discover from '../screens/myLike/discover';
 import FollowRequests from '../screens/myLike/followRequests';
 import Profile from '../screens/myProfile/profile';
 import Follow from '../screens/follow/index';
-import Settings from '../screens/myProfile/settings';
-import EditProfile from '../screens/myProfile/editProfile';
-import UserName from '../screens/myProfile/userName';
-import Bio from '../screens/myProfile/bio';
-import FollowAndInviteFriends from '../screens/myProfile/followAndInviteFriends';
-import Privacy from '../screens/myProfile/privacy';
-import Security from '../screens/myProfile/security';
-import Notifications from '../screens/myProfile/notifications';
-import Ads from '../screens/myProfile/ads';
-import Account from '../screens/myProfile/account';
-import Help from '../screens/myProfile/help';
-import About from '../screens/myProfile/about';
-import SetTheme from '../screens/myProfile/setTheme';
-import SwitchAccount from '../screens/myProfile/switchAccount';
-import CreateNewAccount from '../screens/myProfile/createNewAccount';
+import Settings from '../screens/setting/settings';
+import EditProfile from '../screens/editProfile/editProfile';
+import UserName from '../screens/name/userName';
+import Bio from '../screens/bio/bio';
+import FollowAndInviteFriends from '../screens/followFriends/followAndInviteFriends';
+import Privacy from '../screens/privacy/privacy';
+import Security from '../screens/security/security';
+import Notifications from '../screens/notification/notifications';
+import Ads from '../screens/ads/ads';
+import Account from '../screens/accounts/account';
+import Help from '../screens/helps/help';
+import About from '../screens/abouts/about';
+import SetTheme from '../screens/themes/setTheme';
+import SwitchAccount from '../screens/switchAccount/switchAccount';
+import CreateNewAccount from '../screens/createNewAccount/createNewAccount';
 import IndexOne from '../screens/storiesArchive/indexOne';
-import YourActivity from '../screens/myProfile/yourActivity';
-import Seved from '../screens/myProfile/seved';
-import CloseFriends from '../screens/myProfile/closeFriends';
+import YourActivity from '../screens/activity/yourActivity';
+import Seved from '../screens/save/seved';
+import CloseFriends from '../screens/friends/closeFriends';
+import Favorites from '../screens/myFavorite/favorites';
+import Suggestion from '../screens/suggestions/suggestion';
 
 
  const Stack = createNativeStackNavigator();
@@ -101,8 +103,8 @@ import CloseFriends from '../screens/myProfile/closeFriends';
                  <Stack.Screen  name={"YourActivity"} component ={YourActivity} />
                  <Stack.Screen  name={"Seved"} component ={Seved} />
                  <Stack.Screen  name={"CloseFriends"} component ={CloseFriends} />
-
-
+                 <Stack.Screen  name={"Favorites"} component ={Favorites} />
+                 <Stack.Screen  name={"Suggestion"} component ={Suggestion} />
 
             </Stack.Navigator>
          </NavigationContainer>

@@ -172,7 +172,8 @@ const Profile = (props) => {
                 <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/starList.png')} />
                 <Text style={styles.textReel}>Close Friends</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.reel}>
+              <TouchableOpacity onPress={()=>props.navigation.navigate('Favorites')}
+              style={styles.reel}>
                 <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/star.png')} />
                 <Text style={styles.textReel}>Favorites</Text>
               </TouchableOpacity>
