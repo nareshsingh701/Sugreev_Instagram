@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, ScrollView, TextInput, FlatList, TouchableOpacity, Modal } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TextInput, FlatList, TouchableOpacity, Modal,Pressable } from 'react-native'
 import React, { useState } from 'react'
 
 const Message = (props) => {
@@ -127,6 +127,7 @@ const Message = (props) => {
           setModalVisible(!modalVisible);
         }}
       >
+        <Pressable onPress={()=>setModalVisible(!modalVisible)} style={{flex:1}}>
         <View style={styles.viewModal}>
           <View style={styles.viewHeight}>
             <View style={styles.viewLine} />
@@ -149,6 +150,7 @@ const Message = (props) => {
             </TouchableOpacity>
           </View>
         </View>
+        </Pressable>
       </Modal>
       <ScrollView>
         <View style={styles.viewOne}>
@@ -196,7 +198,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#000',
     marginLeft: 20,
-    marginTop: 2
+    marginTop: 2,
+    width:240
   },
   viewImage: {
     flexDirection: 'row'
@@ -207,14 +210,14 @@ const styles = StyleSheet.create({
     marginTop: 3
   },
   imageVideo: {
-    height: 25,
-    width: 25,
-    marginTop: 7,
+    height: 30,
+    width: 30,
+    marginTop:3,
     marginRight: 15
   },
   imagePlus: {
-    height: 40,
-    width: 40
+    height: 38,
+    width: 45,
   },
   viewOne: {
     height: 40,
@@ -291,7 +294,7 @@ const styles = StyleSheet.create({
   viewHeight: {
     height: 220,
     width: '100%',
-    backgroundColor: 'pink',
+    backgroundColor: '#fff',
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
     paddingHorizontal: 16,
@@ -299,11 +302,11 @@ const styles = StyleSheet.create({
   },
   viewLine: {
     width: 40,
-    borderWidth: 2,
+    height:4,
     alignSelf: 'center',
-    marginTop: 13,
+    marginTop: 15,
     borderRadius: 2,
-    borderColor: 'gray'
+    backgroundColor:'#666666'
   },
   joyaView: {
     flexDirection: 'row',

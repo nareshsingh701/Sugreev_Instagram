@@ -2,6 +2,9 @@ import { StyleSheet, Text, View, TextInput, Image } from 'react-native'
 import React from 'react'
 
 const NewGroup = () => {
+  const data = [
+
+  ]
   return (
     <View style={styles.container}>
       <View style={styles.viewInput}>
@@ -18,9 +21,19 @@ const NewGroup = () => {
           placeholder='Search'
         />
       </View>
-      <View style={styles.view} />
+      <View style={styles.viewLine} />
       <View style={styles.viewSuggested}>
         <Text style={styles.textSuggested}>Suggested</Text>
+      </View>
+      <View style={styles.mainRow}>
+        <View style={styles.row}>
+          <Image resizeMode={'cover'} style={styles.ankush} source={require('../../assets/images/ankush.jpg')} />
+          <View style={styles.ankushView}>
+            <Text style={styles.ankushText}>Ankush Singh</Text>
+            <Text style={styles.singh}>_thakur_ankhush_singh</Text>
+          </View>
+        </View>
+        <Image resizeMode={'cover'} style={styles.round} source={require('../../assets/images/round.png')} />
       </View>
     </View>
   )
@@ -44,7 +57,13 @@ const styles = StyleSheet.create({
   view: {
     height: 1,
     width: '100%',
-    backgroundColor: 'gray',
+    backgroundColor: '#0081fb',
+
+  },
+  viewLine: {
+    height: 0.4,
+    width: '100%',
+    backgroundColor: '#cccccc',
 
   },
   viewSearch: {
@@ -58,12 +77,24 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginLeft: 15
   },
-  viewSuggested:{
-    marginTop:10
+  viewSuggested: {
+    marginTop: 10
   },
-  textSuggested:{
-    fontSize:20,
-    fontWeight:'600',
-    color:'#000'
+  textSuggested: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#000'
+  },
+  ankush: {
+    height: 50,
+    width: 50,
+    borderRadius: 30
+  },
+  row:{
+    flexDirection:'row'
+  },
+  mainRow:{
+    flexDirection:'row',
+    justifyContent:'space-between'
   }
 })

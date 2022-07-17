@@ -1,10 +1,8 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, FlatList, TextInput, Modal, Linking, Pressable } from 'react-native'
 import React, { useState } from 'react'
 
-const Instagram = (props) => {
+const Favorite = (props) => {
     const [modalVisible, setModalVisible] = useState(false);
-    const [madeVisible, setMadeVisible] = useState(false);
-    const [modeVisible, setModeVisible] = useState(false);
     const [comeVisible, setComeVisible] = useState(false);
     const send = [
         {
@@ -147,108 +145,34 @@ const Instagram = (props) => {
             </View>
         )
     }
-    const data = [
-        {
-            name: "Your story",
-            image: require('../../assets/images/Anshika.jpg')
-        },
-        {
-            name: "Ankush Singh",
-            image: require('../../assets/images/ankush.jpg')
-        },
-        {
-            name: "Naresh Singh",
-            image: require('../../assets/images/party.jpg')
-        },
-        {
-            name: "Sugreev Singh",
-            image: require('../../assets/images/rajsingh.jpg')
-        },
-        {
-            name: "Anshika Singh",
-            image: require('../../assets/images/rani.jpg')
-        },
-        {
-            name: "Atul Singh",
-            image: require('../../assets/images/chhotu.jpg')
-        },
-        {
-            name: "Rinku Singh",
-            image: require('../../assets/images/raj.jpg')
-        },
-    ]
-    const openGallery = () => {
-        props.navigation.navigate('Gallery')
-    }
 
-    const renderListData = (listData) => {
-        const { item, index } = listData;
-        return (
-            <View style={styles.viewGallery}>
-                <TouchableOpacity onPress={openGallery}>
-                    <Image resizeMode={'cover'} style={styles.anshika} source={item.image} />
-                </TouchableOpacity>
-                <Text numberOfLines={1} style={styles.story}>{item.name}</Text>
-            </View>
-        )
-    }
     return (
 
         <View style={styles.container}>
-            <View style={styles.view}>
-                <View style={styles.viewOne}>
-
-                    <View style={styles.viewTwo}>
-                        <Text style={styles.text}>Instagram</Text>
-                        <TouchableOpacity onPress={() => setMadeVisible(true)}>
-                            <Image resizeMode={'cover'} style={styles.imageTwo} source={require('../../assets/images/list.png')} />
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={styles.viewThree}>
-                        <TouchableOpacity onPress={() => setModeVisible(true)}>
-                            <Image resizeMode={'cover'} style={styles.imageThree} source={require('../../assets/images/msgInsta.png')} />
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => props.navigation.navigate('Message')}>
-                            <View style={styles.unRead}>
-                                <Text style={styles.read}>10</Text>
-                            </View>
-                            <Image resizeMode={'cover'} style={styles.imageThree} source={require('../../assets/images/instMsg.png')} />
-                        </TouchableOpacity>
-                    </View>
+            <View style={styles.favoriteRow}>
+                <View style={styles.row}>
+                    <TouchableOpacity onPress={()=>props.navigation.goBack()}>
+                        <Image resizeMode={'cover'} style={styles.imageLeft} source={require('../../assets/images/left.png.png')} />
+                    </TouchableOpacity>
+                    <Text style={styles.textFavorite}>Favorites</Text>
                 </View>
+                <TouchableOpacity onPress={()=>props.navigation.navigate('Favorites')}>
+                <Image resizeMode={'cover'} style={styles.imageStarList} source={require('../../assets/images/starList.png')} />
+                </TouchableOpacity>
             </View>
-
-
-            <ScrollView
-                showsVerticalScrollIndicator={false}
-                showsHorizontalScrollIndicator={false}
-            >
-                <FlatList
-                    data={data}
-                    horizontal={true}
-                    keyExtractor={(item, index) => index.toString()}
-                    renderItem={renderListData}
-                    showsHorizontalScrollIndicator={false}
-                />
-
-                <View style={styles.viewFour}>
-                    <View style={styles.viewFive}>
-                        <TouchableOpacity>
-                            <View style={styles.viewSix}>
-                                <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/rajsingh.jpg')} />
-                                <Text style={styles.textOne}>Anshika_Singh</Text>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => setComeVisible(true)}>
-                            <Image resizeMode={'cover'} style={styles.imageSix} source={require('../../assets/images/dotThree.png')} />
-                        </TouchableOpacity>
-                    </View>
+            <ScrollView>
+                <View style={styles.viewFive}>
+                    <TouchableOpacity>
+                        <View style={styles.viewSix}>
+                            <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/rajsingh.jpg')} />
+                            <Text style={styles.textOne}>Anshika_Singh</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => setComeVisible(true)}>
+                        <Image resizeMode={'cover'} style={styles.imageSix} source={require('../../assets/images/dotThree.png')} />
+                    </TouchableOpacity>
                 </View>
-                <View style={styles.viewSeven}>
-                    <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/sugreev.jpg')} />
-                </View>
-
+                <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/sugreev.jpg')} />
                 <View style={styles.viewHeart}>
 
                     <View style={styles.heart}>
@@ -280,7 +204,7 @@ const Instagram = (props) => {
                     </TouchableOpacity>
                     <View style={styles.viewTextInput}>
                         <View style={styles.textInputView}>
-                            <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/ankush.jpg')} />
+                            <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/Anshika.jpg')} />
                             <TextInput style={styles.textInput}
                                 placeholder='Add a comment...'
                             />
@@ -299,8 +223,8 @@ const Instagram = (props) => {
                 <View style={styles.viewFive}>
                     <TouchableOpacity>
                         <View style={styles.viewSix}>
-                            <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/rajsingh.jpg')} />
-                            <Text style={styles.textOne}>Anshika_Singh</Text>
+                            <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/jadu.jpg')} />
+                            <Text style={styles.textOne}>Jadu_Singh</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => setComeVisible(true)}>
@@ -308,9 +232,7 @@ const Instagram = (props) => {
                     </TouchableOpacity>
                 </View>
 
-                <View style={styles.viewSeven}>
-                    <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/jadu.jpg')} />
-                </View>
+                <Image resizeMode={'cover'} style={styles.imageSeven} source={require('../../assets/images/jadu.jpg')} />
 
                 <View style={styles.viewHeart}>
 
@@ -359,227 +281,142 @@ const Instagram = (props) => {
                 </View>
 
 
-            </ScrollView>
-            <View style={styles.viewModal}>
+
+                <View style={styles.viewModal}>
+                    <Modal
+                        animationType="slide"
+                        visible={modalVisible}
+                        transparent={true}
+                        onRequestClose={() => {
+
+                            setModalVisible(!modalVisible);
+                        }}
+                    >
+                        <Pressable onPress={() => setModalVisible(!modalVisible)} style={{ flex: 1 }}>
+                            <View style={styles.modalView}>
+                                <View style={styles.small}>
+                                </View>
+                                <View style={styles.padding}>
+                                    <View style={styles.textInputView}>
+                                        <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/Anshika.jpg')} />
+                                        <TextInput style={styles.textInputOne}
+                                            placeholderTextColor={'#666666'}
+                                            placeholder='Write a message...'
+                                        />
+
+                                    </View>
+                                </View>
+
+                                <View style={styles.line}>
+                                    <View style={styles.paddingTwo}>
+                                        <View style={styles.lineOne}>
+                                            <View style={styles.lineTwo}>
+                                                <View style={styles.lineThree}>
+                                                    <Image resizeMode={'cover'} style={styles.search} source={require('../../assets/images/search.png.png')} />
+                                                    <TextInput style={styles.textLine}
+                                                        placeholderTextColor={'#666666'}
+                                                        placeholder='Search'
+                                                    />
+                                                </View>
+
+                                                <TouchableOpacity onPress={() => props.navigation.navigate('NewGroup')}>
+                                                    <Image resizeMode={'cover'} style={styles.user} source={require('../../assets/images/userGroup.png')} />
+                                                </TouchableOpacity>
+                                            </View>
+
+                                        </View>
+                                        <ScrollView>
+
+                                            <TouchableOpacity>
+                                                <View style={styles.viewReel}>
+                                                    <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/Anshika.jpg')} />
+                                                    <Text style={styles.textReel}>Add reel to Your story</Text>
+                                                </View>
+                                            </TouchableOpacity>
+
+                                            <FlatList
+                                                data={send}
+                                                keyExtractor={(item, index) => index.toString()}
+                                                renderItem={renderData}
+                                                showsHorizontalScrollIndicator={false}
+                                            />
+                                        </ScrollView>
+                                    </View>
+                                </View>
+                            </View>
+                        </Pressable>
+                    </Modal>
+                </View>
                 <Modal
                     animationType="slide"
-                    visible={modalVisible}
+                    visible={comeVisible}
                     transparent={true}
                     onRequestClose={() => {
 
-                        setModalVisible(!modalVisible);
+                        setComeVisible(!comeVisible);
                     }}
                 >
-                    <Pressable onPress={() => setModalVisible(!modalVisible)} style={{ flex: 1 }}>
-                        <View style={styles.modalView}>
-                            <View style={styles.small}>
-                            </View>
-                            <View style={styles.padding}>
-                                <View style={styles.textInputView}>
-                                    <Image resizeMode={'cover'} style={styles.imageFive} source={require('../../assets/images/Anshika.jpg')} />
-                                    <TextInput style={styles.textInputOne}
-                                        placeholderTextColor={'#666666'}
-                                        placeholder='Write a message...'
-                                    />
-
-                                </View>
-                            </View>
-
-                            <View style={styles.line}>
-                                <View style={styles.paddingTwo}>
-                                    <View style={styles.lineOne}>
-                                        <View style={styles.lineTwo}>
-                                            <View style={styles.lineThree}>
-                                                <Image resizeMode={'cover'} style={styles.search} source={require('../../assets/images/search.png.png')} />
-                                                <TextInput style={styles.textLine}
-                                                    placeholderTextColor={'#666666'}
-                                                    placeholder='Search'
-                                                />
+                    <Pressable onPress={() => setComeVisible(!comeVisible)} style={{ flex: 1 }}>
+                        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+                            <View style={styles.viewCome}>
+                                <View style={styles.viewLine} />
+                                <View style={styles.shareView}>
+                                    <TouchableOpacity>
+                                        <View style={styles.viewShare}>
+                                            <Image resizeMode={'cover'} style={styles.imageShare} source={require('../../assets/images/share.png.png')} />
+                                            <View>
+                                                <Text style={styles.textShare}>Share</Text>
                                             </View>
-
-                                            <TouchableOpacity onPress={() => props.navigation.navigate('NewGroup')}>
-                                                <Image resizeMode={'cover'} style={styles.user} source={require('../../assets/images/userGroup.png')} />
-                                            </TouchableOpacity>
                                         </View>
-
-                                    </View>
-                                    <ScrollView>
-
-                                        <TouchableOpacity>
-                                            <View style={styles.viewReel}>
-                                                <Image resizeMode={'cover'} style={styles.imageReel} source={require('../../assets/images/Anshika.jpg')} />
-                                                <Text style={styles.textReel}>Add reel to Your story</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity>
+                                        <View style={styles.viewShare}>
+                                            <Image resizeMode={'cover'} style={styles.imageLink} source={require('../../assets/images/link.png')} />
+                                            <View>
+                                                <Text style={styles.textLink}>Link</Text>
                                             </View>
-                                        </TouchableOpacity>
-
-                                        <FlatList
-                                            data={send}
-                                            keyExtractor={(item, index) => index.toString()}
-                                            renderItem={renderData}
-                                            showsHorizontalScrollIndicator={false}
-                                        />
-                                    </ScrollView>
+                                        </View>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity>
+                                        <View style={styles.viewReport}>
+                                            <Image resizeMode={'cover'} style={styles.imageReport} source={require('../../assets/images/report.png')} />
+                                            <View>
+                                                <Text style={styles.textReport}>Report</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
+                                <TouchableOpacity>
+                                    <View style={styles.reportView}>
+                                        <Text style={styles.reportText}>Why you`re seeing this post</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <View style={styles.reportViewOne}>
+                                        <Text style={styles.reportText}>Remove from Favorites</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <View style={styles.reportViewOne}>
+                                        <Text style={styles.reportText}>Hide</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <View style={styles.reportViewOne}>
+                                        <Text style={styles.reportText}>Unfollow</Text>
+                                    </View>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </Pressable>
                 </Modal>
-                <View style={styles.followView}>
-                    <Modal
-                        animationType="fade"
-                        visible={madeVisible}
-                        transparent={true}
-                        onRequestClose={() => {
-
-                            setMadeVisible(!madeVisible);
-                        }}
-                    >
-                        <Pressable onPress={() => setMadeVisible(!madeVisible)} style={{ flex: 1 }}>
-                            <View style={styles.follow}>
-                                <TouchableOpacity onPress={() => props.navigation.navigate('Following')}>
-                                    <View style={styles.viewChecked} >
-                                        <Text style={styles.followText}>Following</Text>
-                                        <Image resizeMode={'cover'} style={styles.checkedUser} source={require('../../assets/images/checkedUser.png')} />
-                                    </View>
-                                </TouchableOpacity>
-                                <View style={styles.viewStar}>
-
-                                </View>
-                                <TouchableOpacity onPress={() => props.navigation.navigate('Favorite')}>
-                                    <View style={styles.viewChecked} >
-                                        <Text style={styles.followText}>Favorites</Text>
-                                        <Image resizeMode={'cover'} style={styles.imageStar} source={require('../../assets/images/star.png')} />
-                                    </View>
-                                </TouchableOpacity>
-                            </View>
-                        </Pressable>
-                    </Modal>
-                </View>
-                <View style={styles.viewMode}>
-                    <Modal
-                        animationType="fade"
-                        visible={modeVisible}
-                        transparent={true}
-                        onRequestClose={() => {
-
-                            setModeVisible(!modeVisible);
-                        }}
-                    >
-                        <Pressable onPress={() => setModeVisible(!modeVisible)} style={{ flex: 1 }}>
-                            <View style={styles.viewModeOne}>
-                                <View style={styles.modeView}>
-                                    
-                                        <TouchableOpacity>
-                                            <View style={styles.viewChecked} >
-                                                <Text style={styles.followText}>Post</Text>
-                                                <Image resizeMode={'cover'} style={styles.checkedUser} source={require('../../assets/images/post.png')} />
-                                            </View>
-                                        </TouchableOpacity>
-                                        <View style={styles.viewStarTwo}>
-
-                                        </View>
-                                        <TouchableOpacity>
-                                            <View style={styles.viewChecked} >
-                                                <Text style={styles.followText}>Story</Text>
-                                                <Image resizeMode={'cover'} style={styles.imageStar} source={require('../../assets/images/story.png')} />
-                                            </View>
-                                        </TouchableOpacity>
-                                        <View style={styles.viewStarTwo}>
-
-                                        </View>
-                                        <TouchableOpacity>
-                                            <View style={styles.viewChecked} >
-                                                <Text style={styles.followText}>Reel</Text>
-                                                <Image resizeMode={'cover'} style={styles.imageStar} source={require('../../assets/images/reel.png')} />
-                                            </View>
-                                        </TouchableOpacity>
-                                        <View style={styles.viewStarTwo}>
-
-                                        </View>
-                                        <TouchableOpacity>
-                                            <View style={styles.viewChecked} >
-                                                <Text style={styles.followText}>Live</Text>
-                                                <Image resizeMode={'cover'} style={styles.imageStar} source={require('../../assets/images/live.png')} />
-                                            </View>
-                                        </TouchableOpacity>
-                                    
-                                </View>
-                            </View>
-                        </Pressable>
-                    </Modal>
-                </View>
-                <View>
-
-                    <Modal
-                        animationType="slide"
-                        visible={comeVisible}
-                        transparent={true}
-                        onRequestClose={() => {
-
-                            setComeVisible(!comeVisible);
-                        }}
-                    >
-                        <Pressable onPress={() => setComeVisible(!comeVisible)} style={{ flex: 1 }}>
-                            <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-                                <View style={styles.viewCome}>
-                                    <View style={styles.viewLine} />
-                                    <View style={styles.shareView}>
-                                        <TouchableOpacity>
-                                            <View style={styles.viewShare}>
-                                                <Image resizeMode={'cover'} style={styles.imageShare} source={require('../../assets/images/share.png.png')} />
-                                                <View>
-                                                    <Text style={styles.textShare}>Share</Text>
-                                                </View>
-                                            </View>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity>
-                                            <View style={styles.viewShare}>
-                                                <Image resizeMode={'cover'} style={styles.imageLink} source={require('../../assets/images/link.png')} />
-                                                <View>
-                                                    <Text style={styles.textLink}>Link</Text>
-                                                </View>
-                                            </View>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity>
-                                            <View style={styles.viewReport}>
-                                                <Image resizeMode={'cover'} style={styles.imageReport} source={require('../../assets/images/report.png')} />
-                                                <View>
-                                                    <Text style={styles.textReport}>Report</Text>
-                                                </View>
-                                            </View>
-                                        </TouchableOpacity>
-                                    </View>
-                                    <TouchableOpacity>
-                                        <View style={styles.reportView}>
-                                            <Text style={styles.reportText}>Why you`re seeing this post</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity>
-                                        <View style={styles.reportViewOne}>
-                                            <Text style={styles.reportText}>Remove from Favorites</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity>
-                                        <View style={styles.reportViewOne}>
-                                            <Text style={styles.reportText}>Hide</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity>
-                                        <View style={styles.reportViewOne}>
-                                            <Text style={styles.reportText}>Unfollow</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                        </Pressable>
-                    </Modal>
-                </View>
-            </View>
+            </ScrollView>
         </View>
+
     )
 }
 
-export default Instagram
+export default Favorite;
 
 const styles = StyleSheet.create({
     container: {
@@ -587,14 +424,34 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         marginBottom: 30
     },
-    view: {
-        height: 80,
-        width: '100%'
-    },
+
     viewOne: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginRight: 15,
+    },
+    favoriteRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: 16,
+        marginTop: 15,
+        marginBottom:10
+    },
+    imageLeft: {
+        height: 30,
+        width: 30,
+        marginTop: 3
+    },
+    textFavorite: {
+        fontSize: 27,
+        fontWeight: '700',
+        color: '#000',
+        marginLeft: 25
+    },
+    imageStarList: {
+        height: 30,
+        width: 30,
+        marginTop:5
     },
     viewTwo: {
         flexDirection: 'row',
@@ -636,28 +493,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#666666'
     },
-    unRead: {
-        height: 19,
-        width: 25,
-        backgroundColor: '#ff3250',
-        position: 'absolute',
-        left: 30,
-        bottom: 27,
-        borderRadius: 25,
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 100
-    },
-    read: {
-        color: '#fff',
-        fontWeight: '600'
-    },
-    viewFour: {
-        height: 55,
-        borderTopWidth: 0.4,
-        borderBottomWidth: 0.4,
-        marginTop: 10
-    },
+
     viewFou: {
         height: 0.4,
         width: '100%',
@@ -695,30 +531,8 @@ const styles = StyleSheet.create({
         width: '100%',
 
     },
-    viewSeven: {
 
-    },
-    anshika: {
-        height: 70,
-        width: 70,
-        borderRadius: 35,
-        marginHorizontal: 10
-    },
-    gallery: {
-        height: 120,
-        width: '100%',
 
-    },
-    viewGallery: {
-        marginRight: 0
-    },
-    story: {
-        fontSize: 16,
-        color: '#000',
-        marginTop: 7,
-        width: 100,
-        marginLeft: 8
-    },
     row: {
         flexDirection: 'row'
     },
@@ -918,20 +732,7 @@ const styles = StyleSheet.create({
         height: 30,
         width: 30
     },
-    viewMode: {
-        flex: 1,
-    },
-    modeView: {
-        height: 200,
-        width: '35%',
-        backgroundColor: '#fff',
-        borderRadius: 5,
 
-    },
-    viewModeOne: {
-        alignItems: 'flex-end',
-        marginTop: 75
-    },
     viewStarTwo: {
         borderWidth: 0.4,
         marginTop: 10

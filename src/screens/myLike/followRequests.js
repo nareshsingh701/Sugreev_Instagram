@@ -76,7 +76,7 @@ const FollowRequests = (props) => {
         <View style={styles.container}>
             <View style={styles.viewMain}>
                 <View style={styles.viewLeft}>
-                    <TouchableOpacity onPress={()=>props.navigation.goBack()}>
+                    <TouchableOpacity onPress={() => props.navigation.goBack()}>
                         <Image resizeMode={'cover'} style={styles.leftImage} source={require('../../assets/images/left.png.png')} />
                     </TouchableOpacity>
                     <Text style={styles.textOne}>Follow requests</Text>
@@ -99,10 +99,11 @@ const FollowRequests = (props) => {
                     renderItem={renderListData}
                     showsHorizontalScrollIndicator={false}
                 />
+
+                <TouchableOpacity onPress={() => props.navigation.navigate('Discover')}>
+                    <Text style={styles.textSee}>See all suggestions</Text>
+                </TouchableOpacity>
             </ScrollView>
-            <TouchableOpacity onPress={()=>props.navigation.navigate('Discover')}>
-            <Text style={styles.textSee}>See all suggestions</Text>
-            </TouchableOpacity>
         </View>
     )
 }
@@ -155,7 +156,7 @@ const styles = StyleSheet.create({
         color: '#000',
     },
     textTitle: {
-        fontSize: 16,
+        fontSize: 18,
         color: '#595959',
         marginHorizontal: 20,
         textAlign: 'center',
@@ -226,9 +227,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#000',
     },
-    textSee:{
-        fontSize:18,
-        marginTop:15,
-        color:'#1a75ff'
+    textSee: {
+        fontSize: 18,
+        marginTop: 15,
+        color: '#1a75ff'
     }
 })

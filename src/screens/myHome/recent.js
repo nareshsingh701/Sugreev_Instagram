@@ -42,8 +42,8 @@ const Recent = (props) => {
         <View style={styles.viewRow}>
           <Image resizeMode={'cover'} style={styles.imageJadu} source={item.image} />
           <View style={styles.viewText}>
-            <Text style={styles.textNaresh}>{item.name}</Text>
-            <Text style={styles.textThakur}>{item.title}</Text>
+            <Text numberOfLines={1} style={styles.textNaresh}>{item.name}</Text>
+            <Text numberOfLines={1} style={styles.textThakur}>{item.title}</Text>
           </View>
         </View>
         <TouchableOpacity>
@@ -146,7 +146,8 @@ const styles = StyleSheet.create({
     marginLeft: 15
   }, textNaresh: {
     fontSize: 18,
-    color: '#000'
+    color: '#000',
+    width:250,
   },
   textThakur: {
     fontSize: 16,

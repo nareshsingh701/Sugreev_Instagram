@@ -49,6 +49,8 @@ import Seved from '../screens/save/seved';
 import CloseFriends from '../screens/friends/closeFriends';
 import Favorites from '../screens/myFavorite/favorites';
 import Suggestion from '../screens/suggestions/suggestion';
+import Following from '../screens/following/following';
+import Favorite from '../screens/favorite/favorite';
 
 
  const Stack = createNativeStackNavigator();
@@ -61,7 +63,7 @@ import Suggestion from '../screens/suggestions/suggestion';
  const Navigation = () => {
      return (
          <NavigationContainer>
-             <Stack.Navigator initialRouteName='Profile'>
+             <Stack.Navigator initialRouteName='Instagram'>
                  <Stack.Screen  name="Login" component={Login}/> 
                  <Stack.Screen  name="Splash" component={Splash}/>
                  <Stack.Screen name="languageList" component={LanguageList}/>
@@ -105,6 +107,8 @@ import Suggestion from '../screens/suggestions/suggestion';
                  <Stack.Screen  name={"CloseFriends"} component ={CloseFriends} />
                  <Stack.Screen  name={"Favorites"} component ={Favorites} />
                  <Stack.Screen  name={"Suggestion"} component ={Suggestion} />
+                 <Stack.Screen  name={"Following"} component ={Following} />
+                 <Stack.Screen options={{headerShown:false}} name={"Favorite"} component ={Favorite} />
 
             </Stack.Navigator>
          </NavigationContainer>

@@ -1,7 +1,9 @@
 import { StyleSheet, Text, View, Image, TextInput, ScrollView, FlatList, TouchableOpacity } from 'react-native'
+import CheckBox from '@react-native-community/checkbox';
 import React, { useState } from 'react'
 
 const Chat = (props) => {
+    // const []
     const data = [
         {
             name: "atul singh",
